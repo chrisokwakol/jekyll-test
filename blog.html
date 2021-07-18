@@ -1,0 +1,105 @@
+---
+layout: default
+title: Blog
+hero-title: Not Very Humerus
+hero-subtitle: Open source bioinformatics blog
+header-image: "/assets/images/header.jpg"
+--- 
+<div class="blog-page-section">
+    <div class="blog-posts-main">
+        {% for post in site.posts %}
+        <div class="blog-post">
+            <img src="/assets/images/blog/blog1.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>{{ post.title }}</h4>
+                <h3>How do I become a bioinformatician?</h3>
+                <div class="date-author">
+                    <span>June 9th 2021</span> &nbsp;
+                    <span>By</span> &nbsp;
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">{{ post.excerpt }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- <div class="blog-post">
+            <img src="/assets/images/blog/blog1.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Biology</h4>
+                <h3>How do I become a bioinformatician?</h3>
+                <div class="date-author">
+                    <span>June 9th 2021</span> &nbsp;
+                    <span>By</span> &nbsp;
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I see plenty of posts on /r/bioinformatics of students or mid-career
+                    professionals asking what it takes to become a bioinformatician. </p>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <img src="/assets/images/blog/blog1.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Biology</h4>
+                <h3>How do I become a bioinformatician?</h3>
+                <div class="date-author">
+                    <span>June 9th 2021</span> &nbsp;
+                    <span>By</span> &nbsp;
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I see plenty of posts on /r/bioinformatics of students or mid-career
+                    professionals asking what it takes to become a bioinformatician. </p>
+            </div>
+        </div> -->
+    </div> 
+
+    <div class="blog-posts-sidebar">
+        <h2 class="recent-posts-title">Recent posts</h2>
+        <div class="blog-post">
+            <img src="/assets/images/blog/blog1.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Biology</h4>
+                <h3>How do I become a bioinformatician?</h3>
+                <div class="date-author">
+                    <span>June 9th 2021</span> &nbsp;
+                    <span>By</span> &nbsp;
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I see plenty of posts on /r/bioinformatics of students or mid-career
+                    professionals asking what it takes to become a bioinformatician. </p>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <img src="/assets/images/blog/blog1.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Biology</h4>
+                <h3>How do I become a bioinformatician?</h3>
+                <div class="date-author">
+                    <span>June 9th 2021</span> &nbsp;
+                    <span>By</span> &nbsp;
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I see plenty of posts on /r/bioinformatics of students or mid-career
+                    professionals asking what it takes to become a bioinformatician. </p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/blog1.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Biology</h4>
+                <h3>How do I become a bioinformatician?</h3>
+                <div class="date-author">
+                    <span>June 9th 2021</span> &nbsp;
+                    <span>By</span> &nbsp;
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I see plenty of posts on /r/bioinformatics of students or mid-career
+                    professionals asking what it takes to become a bioinformatician. </p>
+            </div>
+        </div>
+    </div>
+
+</div>

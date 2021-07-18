@@ -1,0 +1,50 @@
+<!-- HEADER -->
+<header> 
+    <img id="header-bg" src="{{ page.header-image }}" alt="" srcset="">
+    <nav>
+        <div class="logo">
+            <a href="../index.html"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../cv.html">C.V</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- MOBILE NAV -->
+        <div id="mobile-nav-overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="mobile-nav-overlay-content">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../portfolio.html">Portfolio</a>
+                <a href="../cv.html">C.V</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero text -->
+    <div class="hero-text">
+        <h1>{{ page.hero-title }}</h1>
+        <h3>{{ page.hero-subtitle }}</h3>
+        <div class="hero-icons">
+            <i class="fas fa-envelope fa-2x"></i>
+            <i class="fab fa-linkedin fa-2x"></i>
+            <i class="fab fa-patreon fa-2x"></i>
+            <i class="fab fa-github fa-2x"></i>
+            <i class="fab fa-facebook fa-2x"></i>
+            <i class="fab fa-spotify fa-2x"></i>
+        </div>
+    </div>
+</header>

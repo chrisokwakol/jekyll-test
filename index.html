@@ -1,0 +1,257 @@
+---
+layout: default
+title: Home 
+hero-title: Matt Ralston
+hero-subtitle: Bioinformatician | Gamer | Powerlifter
+header-image: "/assets/images/header3.jpg"
+---
+
+<!-- BELOW HEADER -->
+<div class="below-header">
+
+    <div class="item-one">
+        <div class="below-header-icon">
+            <i class="far fa-copy fa-4x"></i>
+        </div>
+        <div class="below-header-text">
+            <h4>Academic apps and <br> opines</h4>
+            <p>Github, report requests, mastheads</p>
+        </div>
+    </div>
+ 
+    <div class="item-two">
+        <div class="below-header-icon">
+            <i class="fas fa-rss fa-4x"></i>
+        </div>
+        <div class="below-header-text">
+            <h4>Not Very Humerus</h4>
+            <p>RSS | Open source and academic blog</p>
+        </div>
+    </div>
+
+    <div class="item-three">
+        <div class="below-header-icon">
+            <i class="fab fa-github fa-4x"></i>
+        </div>
+        <div class="below-header-text">
+            <h4>Code portfolio on <br> Github</h4>
+            <p>Source code and documentation</p>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION SEPARATOR -->
+<hr class="homepage-line-separator">
+
+<!-- ABOUT -->
+<div class="about-section">
+    <h1>ABOUT</h1>
+    <div>
+        <h4>Who's this guy?</h4>
+        <p>
+            I’m Matt.  A laboratory scientist and programmer. I have a serious passion for computers, bioinformatics and algorithms. Bioinformatician who enjoys studying microbiological genomics and algorithms. Not currently enrolled in a program but still studying the disciplines nonetheless. I look for disciplines that are synergistic with biological fundamentals (chemistry, compuster science, and mathematics) to balance potential applied science areas with my quantitative reasoning. <br><br>
+
+                Philosophically, I admire the spirit of the Gnu Public License, Creative Commons, Arduino, and open-science communities. Some day, I'd love to work on some blog posts about citizen science with Arduino instruments.<br><br>
+                
+                A challenge in biological sciences is system complexity and the number of system components available to study. For this reason, there has been an increase in the number of multiplexed measurement technologies, as well as an increase in the cost of instrumentation. Multiplexed assay formats like the microarray and Illumina sequencing provide a broad, survey arm to detect changes worth investigating at the classical level. However, determining the sensitivity of such measurements or confronting the quantitative aspects of biology remains a challenge that is often addressed by software and statistical thresholding.<br><br>
+                
+                Quantitative fundamentals are often pushed aside in exchange for a broad applied science survey in many undergraduate biology programs. For this reason, I elected to focus on classical biochemistry book work, applied molecular fundamentals in a cancer laboratory, and a masters degree in computer science with a focus on sequencing technology and multiplexed gene expression.<br><br>
+                
+                If there was one thing I'd fix from my masters degree, it would be that I didn't build the library from scratch with cheap ligases and random hexamers. I elected instead to use a Illumina TruSeq sequencing kit, which produced an RNA library with good fragment length and excellent fastq quality scores. However, these kits should be used as a high-caliber basis to judge the quality of alternative library preparation protocols utilizing cheaper reagents and custom barcoding strategies. In short: I wish I had used a more DIY approach.<br><br>
+                
+                Open source fanboy, gamer, guitarist. 
+        </p>
+    </div>
+</div>
+
+<!-- SECTION SEPARATOR -->
+<hr class="homepage-line-separator skills" style="margin-top: 95px; margin-bottom: 95px;">
+
+<!-- SKILLS -->
+<div class="skills-section">
+    <h2>Skills</h2>
+    <div class="segmented-control">
+
+        <div class="btn-box">
+            <button id="btn-1" onclick="openTheoretical()"><i class="fas fa-book-open"></i> &nbsp;Theoretical</button>
+            <button id="btn-2" onclick="openLaboratory()"><i class="fas fa-vial"></i> &nbsp;Laboratory</button>
+            <button id="btn-3" onclick="openCoding()"><i class="fas fa-code"></i> &nbsp;Coding</button>
+        </div>
+
+        <div id="content-1" class="content">
+            <div class="content-left">
+                <ul>
+                    <li>Biochemistry</li>
+                    <li>Physiology</li>
+                    <li>Genetics/Genomics</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <ul>
+                    <li>Algorithms</li>
+                    <li>Biostatistics</li>
+                    <li>Machine Learning</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content-2" class="content">
+            <div class="content-left">
+                <h4> Organic, Phyical, Analytical Chemistry:</h4>
+                <ul>
+                    <li>GC-MS</li>
+                    <li>HPLC</li>
+                    <li>ITC</li>
+                </ul>
+                <h4> Microbiology:</h4>
+                <ul>
+                    <li>Fed-batch fermentation</li>
+                    <li>Plate/colony culture</li>
+                    <li>Flux-balance analysis</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <h4> Immunoscience:
+                </h4>
+                <ul>
+                    <li>Fluorescence-Activated Cell Sorting (FACS)</li>
+                    <li>Immunofluorescence / Immunohistochemistry</li>
+                    <li>Western blot</li>
+                </ul>
+                <h4> Molecular Biology:</h4>
+                <ul>
+                    <li>Northern blot</li>
+                    <li>q-RT-PCR</li>
+                    <li>Next Generation Sequencing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content-3" class="content">
+            <div class="content-left">
+                <h4>Database:</h4>
+                <ul>
+                    <li>MySQL/PostgreSQL/Oracle</li>
+                    <li>MongoDB/DynamoDB</li>
+                    <li>Sqlalchemy/Rails/Express ORMs</li>
+                </ul>
+                <h4>Statistics / Visualization:</h4>
+                <ul>
+                    <li>R + KnitR + Shiny</li>
+                    <li>Data-Driven Documents (D3.js)</li>
+                </ul>
+                <h4> Web Development:</h4>
+                <ul>
+                    <li>HTML + CSS + JS</li>
+                    <li>REST-APIs</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <h4>UNIX Shell:</h4>
+                <ul>
+                    <li>Bash on RHEL/Debian/Arch Linux/OSX</li>
+                </ul>
+                <h4>Scripting / Full-stack:</h4>
+                <ul>
+                    <li>Bash</li>
+                    <li>Python / Flask</li>
+                    <li>Ruby / Rails</li>
+                    <li>Perl</li>
+                    <li>NodeJS / Express</li>
+                </ul>
+                <h4>Functional Programming:</h4>
+                <ul>
+                    <li>Scheme</li>
+                    <li>Haskell</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- PROJECTS, WORK HISTORY & EDUCATION -->
+<div class="pwh-section">
+
+    <div class="projects">
+        <h2 class="decorated"><span>Projects</span></h2>
+        <div class="pwh-section-info">
+            <p>
+                I am currently working on tuning and benchmarking an algorithm for processing k-mer spectra under GPLv3+. The project is detailed further under my Portfolio Showcase. The project features theoretical investigations, code profiling, report generation, and Github project management.
+            </p>
+            <ul>
+                <li>Northern blot</li>
+                <li>K-mer Database (.kdb)</li>
+                <li>Performance Benchmarking (Rmd)</li>
+                <li>Kmer.js</li>
+                <li>NGS Complexity Index</li>
+                <li>Customized Arch Linux OS</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="work-history">
+        <h2 class="decorated"><span>Work History</span></h2>
+        <div class="pwh-section-info">
+            <p>
+                In the past, I worked for Terry Papoutsakis, a metabolic engineer of the bacterium C. acetobutylicum and the biopharmaceutical company Bristol-Myers Squibb in two departments: Computational Genomics and Computer Assisted Drug Design. If you'd like to see more about my professional life, please check out the associated information in my resume, my LinkedIn, or contact me on social media for my long-form curriculum vitae.
+            </p>
+            <ul>
+                <li>Papoutsakis Lab</li>
+                <li>Bristol Myers Squibb</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="education">
+        <h2 class="decorated"><span>Education</span></h2>
+        <div class="pwh-section-info">
+            <ul>
+                <li>B.S. Biochemistry</li>
+                <li>K-mer Database (.kdb)</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- BLOG -->
+<div class="blog-section">
+    <h1>Blog</h1>
+    <div class="blog-posts">
+
+        <div class="blog-post one">
+            <img src="{{ "/assets/images/workstation.jpg" }}" alt="" srcset="">
+            <h4>What workstation do I need for graduate school?</h4>
+            <p>
+                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
+            </p>
+        </div>
+
+        <div class="blog-post two">
+            <img src="{{ "/assets/images/workstation.jpg" }}" alt="" srcset="">
+            <h4>What workstation do I need for graduate school?</h4>
+            <p>
+                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
+            </p>
+        </div>
+
+        <div class="blog-post three">
+            <img src="{{ "/assets/images/workstation.jpg" }}" alt="" srcset="">
+            <h4>What workstation do I need for graduate school?</h4>
+            <p>
+                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
+            </p>
+        </div>
+        
+        <div class="blog-post four">
+            <img src="{{ "/assets/images/workstation.jpg" }}" alt="" srcset="">
+            <h4>What workstation do I need for graduate school?</h4>
+            <p>
+                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
+            </p>
+        </div>
+
+    </div>
+</div>
+
