@@ -854,10 +854,6 @@ footer .copyright {
     font-size: 1.4em;
   }
 
-  .below-header-text p {
-    /* font-size: 0.5em; */
-  }
-
   /* BLOG */
   .blog-section h1 {
     margin-top: 75px;
@@ -878,6 +874,19 @@ footer .copyright {
 
   .blog-page-section .blog-posts-sidebar .blog-post {
     max-width: 800px;
+  }
+
+  /* Skills */
+  .skills-section {
+    margin-bottom: 100px;
+  }
+
+  .content-left, .content-right {
+    font-size: .9em;
+  }
+  
+  .content-left {
+    margin-right: 30px;
   }
 
   /* Segmented control */
