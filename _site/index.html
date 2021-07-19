@@ -4,29 +4,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Home - Matt Ralston</title>
+    <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+    <link rel="stylesheet" href="/assets/css/animations.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
-
-    <style>
-
-    </style>
   </head>
   <body>
     <!-- HEADER -->
 <header> 
-    <img id="header-bg" src="/assets/images/header3.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="/assets/images/header3.jpg" alt="" srcset=""> -->
+    <img id="header-bg" src="//assets/images/header3.jpg" alt="" srcset="">
     <nav>
         <div class="logo">
-            <a href="../index.html"><h2 style="color: white;">Matt Ralston</h2></a>
+            <a href="/index.html"><h2 style="color: white;">Matt Ralston</h2></a>
         </div>
         <div class="nav-menu">
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../portfolio.html">Portfolio</a></li>
-                <li><a href="../cv.html">C.V</a></li>
-                <li><a href="../blog.html">Blog</a></li>
-                <li><a href="../contact.html"><button>Contact</button></a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/cv.html">C.V</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/contact.html"><button>Contact</button></a></li>
             </ul>
         </div>
         <div id="open-mobile-nav" onclick="openNav()">
@@ -38,36 +37,36 @@
         <div id="mobile-nav-overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div id="mobile-nav-overlay-content">
-                <a href="../index.html">Home</a>
-                <a href="../about.html">About</a>
-                <a href="../portfolio.html">Portfolio</a>
-                <a href="../cv.html">C.V</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contact.html">Contact</a>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Portfolio</a>
+                <a href="">C.V</a>
+                <a href="">Blog</a>
+                <a href="">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero text -->
-    <div class="hero-text">
-        <h1>Matt Ralston</h1>
-        <h3>Bioinformatician | Gamer | Powerlifter</h3>
-        <div class="hero-icons">
-            <i class="fas fa-envelope fa-2x"></i>
-            <i class="fab fa-linkedin fa-2x"></i>
-            <i class="fab fa-patreon fa-2x"></i>
-            <i class="fab fa-github fa-2x"></i>
-            <i class="fab fa-facebook fa-2x"></i>
-            <i class="fab fa-spotify fa-2x"></i>
+    <div class="animatedParent hero-text" data-appear-top-offset='-100'>
+        <h1 class="animated rotateInDownRight">Matt Ralston</h1>
+        <h3 class="animated rotateInDownLeft">Bioinformatician | Gamer | Powerlifter</h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
         </div>
     </div>
 </header>
 
      
     <!-- BELOW HEADER -->
-<div class="below-header">
+<div class="below-header animatedParent" data-appear-top-offset='-100' data-sequence='500'>
 
-    <div class="item-one">
+    <div class="item-one animated bounceInDown" data-id='1'>
         <div class="below-header-icon">
             <i class="far fa-copy fa-4x"></i>
         </div>
@@ -76,8 +75,8 @@
             <p>Github, report requests, mastheads</p>
         </div>
     </div>
- 
-    <div class="item-two">
+
+    <div class="item-two animated bounceInDown" data-id='2'>
         <div class="below-header-icon">
             <i class="fas fa-rss fa-4x"></i>
         </div>
@@ -87,7 +86,7 @@
         </div>
     </div>
 
-    <div class="item-three">
+    <div class="item-three animated bounceInDown" data-id='3'>
         <div class="below-header-icon">
             <i class="fab fa-github fa-4x"></i>
         </div>
@@ -102,11 +101,11 @@
 <hr class="homepage-line-separator">
 
 <!-- ABOUT -->
-<div class="about-section">
-    <h1>ABOUT</h1>
-    <div>
-        <h4>Who's this guy?</h4>
-        <p>
+<div class="animatedParent about-section" data-appear-top-offset='-100'>
+    <h1 class="animated bounceInDown">ABOUT</h1>
+    <div class="animatedParent" data-appear-top-offset='-300'>
+        <h4 class="animated bounceInLeft">Who's this guy?</h4>
+        <p class="animated bounceInRight">
             I’m Matt.  A laboratory scientist and programmer. I have a serious passion for computers, bioinformatics and algorithms. Bioinformatician who enjoys studying microbiological genomics and algorithms. Not currently enrolled in a program but still studying the disciplines nonetheless. I look for disciplines that are synergistic with biological fundamentals (chemistry, compuster science, and mathematics) to balance potential applied science areas with my quantitative reasoning. <br><br>
 
                 Philosophically, I admire the spirit of the Gnu Public License, Creative Commons, Arduino, and open-science communities. Some day, I'd love to work on some blog posts about citizen science with Arduino instruments.<br><br>
@@ -126,8 +125,8 @@
 <hr class="homepage-line-separator skills" style="margin-top: 95px; margin-bottom: 95px;">
 
 <!-- SKILLS -->
-<div class="skills-section">
-    <h2>Skills</h2>
+<div class="animatedParent skills-section" data-appear-top-offset='-50'>
+    <h2 class="animated shake">Skills</h2>
     <div class="segmented-control">
 
         <div class="btn-box">
@@ -229,44 +228,44 @@
 </div>
 
 <!-- PROJECTS, WORK HISTORY & EDUCATION -->
-<div class="pwh-section">
+<div class="pwh-section animatedParent" data-appear-top-offset='-100' data-sequence='500'>
 
     <div class="projects">
-        <h2 class="decorated"><span>Projects</span></h2>
+        <h2 class="animated bounceInDown decorated" data-id='1'><span>Projects</span></h2>
         <div class="pwh-section-info">
-            <p>
+            <p class="animated bounceInUp" data-id='2'>
                 I am currently working on tuning and benchmarking an algorithm for processing k-mer spectra under GPLv3+. The project is detailed further under my Portfolio Showcase. The project features theoretical investigations, code profiling, report generation, and Github project management.
             </p>
             <ul>
-                <li>Northern blot</li>
-                <li>K-mer Database (.kdb)</li>
-                <li>Performance Benchmarking (Rmd)</li>
-                <li>Kmer.js</li>
-                <li>NGS Complexity Index</li>
-                <li>Customized Arch Linux OS</li>
+                <li class='animated bounceInRight' data-id='3'>Northern blot</li>
+                <li class='animated bounceInRight' data-id='4'>K-mer Database (.kdb)</li>
+                <li class='animated bounceInRight' data-id='5'>Performance Benchmarking (Rmd)</li>
+                <li class='animated bounceInRight' data-id='6'>Kmer.js</li>
+                <li class='animated bounceInRight' data-id='7'>NGS Complexity Index</li>
+                <li class='animated bounceInRight' data-id='8'>Customized Arch Linux OS</li>
             </ul>
         </div>
     </div>
 
     <div class="work-history">
-        <h2 class="decorated"><span>Work History</span></h2>
+        <h2 class="animated bounceInDown decorated" data-appear-top-offset='-100' data-id='8'><span>Work History</span></h2>
         <div class="pwh-section-info">
-            <p>
+            <p class="animated bounceInUp" data-id='9'>
                 In the past, I worked for Terry Papoutsakis, a metabolic engineer of the bacterium C. acetobutylicum and the biopharmaceutical company Bristol-Myers Squibb in two departments: Computational Genomics and Computer Assisted Drug Design. If you'd like to see more about my professional life, please check out the associated information in my resume, my LinkedIn, or contact me on social media for my long-form curriculum vitae.
             </p>
             <ul>
-                <li>Papoutsakis Lab</li>
-                <li>Bristol Myers Squibb</li>
+                <li class='animated bounceInRight' data-id='10'>Papoutsakis Lab</li>
+                <li class='animated bounceInRight' data-id='11'>Bristol Myers Squibb</li>
             </ul>
         </div>
     </div>
 
     <div class="education">
-        <h2 class="decorated"><span>Education</span></h2>
+        <h2 class="animated bounceInDown decorated" data-id='12'><span>Education</span></h2>
         <div class="pwh-section-info">
             <ul>
-                <li>B.S. Biochemistry</li>
-                <li>K-mer Database (.kdb)</li>
+                <li class='animated bounceInRight' data-id='13'>B.S. Biochemistry</li>
+                <li class='animated bounceInRight' data-id='14'>K-mer Database (.kdb)</li>
             </ul>
         </div>
     </div>
@@ -274,41 +273,42 @@
 </div>
 
 <!-- BLOG -->
-<div class="blog-section">
-    <h1>Blog</h1>
+<div class="blog-section animatedParent" data-appear-top-offset='-100'>
+    <h1 class="animated bounceInDown">Blog</h1>
     <div class="blog-posts">
-
+        
         <div class="blog-post one">
-            <img src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4>What workstation do I need for graduate school?</h4>
-            <p>
+            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            <h4 class="animated bounceInRight">Bananas</h4>
+            <p class="animated bounceInRight"> 
                 In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
             </p>
         </div>
+        
 
-        <div class="blog-post two">
-            <img src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4>What workstation do I need for graduate school?</h4>
-            <p>
+        <!-- <div class="blog-post two">
+            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            <h4 class="animated bounceInRight">What workstation do I need for graduate school?</h4>
+            <p class="animated bounceInRight">
                 In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
             </p>
         </div>
 
         <div class="blog-post three">
-            <img src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4>What workstation do I need for graduate school?</h4>
-            <p>
+            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            <h4 class="animated bounceInRight">What workstation do I need for graduate school?</h4>
+            <p class="animated bounceInRight">
                 In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
             </p>
         </div>
         
         <div class="blog-post four">
-            <img src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4>What workstation do I need for graduate school?</h4>
-            <p>
+            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            <h4 class="animated bounceInRight">What workstation do I need for graduate school?</h4>
+            <p class="animated bounceInRight">
                 In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
             </p>
-        </div>
+        </div> -->
 
     </div>
 </div>
@@ -321,40 +321,42 @@
 
         <div class="links">
             <div class="footer-logo">
-                <h3>Matt Ralston</h3>
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
             </div>
             <div class="footer-quick-links">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Portfolio</li>
-                    <li>C.V</li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
                 </ul>
             </div>
             <div>
                 <h3>Other Links</h3>
                 <ul class="footer-links">
-                    <li>Blog</li>
-                    <li>Contact</li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
             <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
             <div class="footer-icons">
-                <i class="fas fa-envelope fa-2x"></i>
-                <i class="fab fa-linkedin fa-2x"></i>
-                <i class="fab fa-patreon fa-2x"></i>
-                <i class="fab fa-github fa-2x"></i>
-                <i class="fab fa-facebook fa-2x"></i>
-                <i class="fab fa-spotify fa-2x"></i>
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
             </div>
         </div>
 
     </div>
 </footer>
 
-    <script type="text/javascript" src="/assets/js/main.js"></script> 
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
   </body>
 </html>

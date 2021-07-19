@@ -1,5 +1,6 @@
 <!-- HEADER -->
 <header> 
+    <!-- <img id="header-bg" src="{{ page.header-image }}" alt="" srcset=""> -->
     <img id="header-bg" src="{{ site.baseurl }}/{{ page.header-image }}" alt="" srcset="">
     <nav>
         <div class="logo">
@@ -24,27 +25,27 @@
         <div id="mobile-nav-overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div id="mobile-nav-overlay-content">
-                <a href="../index.html">Home</a>
-                <a href="../about.html">About</a>
-                <a href="../portfolio.html">Portfolio</a>
-                <a href="../cv.html">C.V</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contact.html">Contact</a>
+                <a href="{{ site.baseurl }}">Home</a>
+                <a href="{{ site.baseurl }}">About</a>
+                <a href="{{ site.baseurl }}">Portfolio</a>
+                <a href="{{ site.baseurl }}">C.V</a>
+                <a href="{{ site.baseurl }}">Blog</a>
+                <a href="{{ site.baseurl }}">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero text -->
-    <div class="hero-text">
-        <h1>{{ page.hero-title }}</h1>
-        <h3>{{ page.hero-subtitle }}</h3>
-        <div class="hero-icons">
-            <i class="fas fa-envelope fa-2x"></i>
-            <i class="fab fa-linkedin fa-2x"></i>
-            <i class="fab fa-patreon fa-2x"></i>
-            <i class="fab fa-github fa-2x"></i>
-            <i class="fab fa-facebook fa-2x"></i>
-            <i class="fab fa-spotify fa-2x"></i>
+    <div class="animatedParent hero-text" data-appear-top-offset='-100'>
+        <h1 class="animated rotateInDownRight">{{ page.hero-title }}</h1>
+        <h3 class="animated rotateInDownLeft">{{ page.hero-subtitle }}</h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
         </div>
     </div>
 </header>

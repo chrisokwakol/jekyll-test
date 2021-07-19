@@ -81,7 +81,8 @@ nav {
 }
 
 .nav-menu ul li a:hover {
-  color: var(--main-color);
+  /* color: var(--main-color); */
+  color: #EDA52A;
 }
 
 /* nav menu btn */
@@ -207,11 +208,32 @@ header {
 .hero-icons {
   margin-top: 53px;
   cursor: pointer;
-  margin-left: 0.5%;
+  /* margin-right: 0.5%; */
 }
 
-.hero-icons i:hover {
-  color: var(--main-color);
+/* icons on hover color */
+.fa-envelope:hover {
+  color: #D44638;
+}
+
+.fa-linkedin:hover {
+  color: #0E76A8;
+}
+
+.fa-patreon:hover {
+  color: #E64413;
+}
+
+.fa-github:hover {
+  color: #333;
+}
+
+.fa-facebook:hover {
+  color: #1778F2;
+}
+
+.fa-spotify:hover {
+  color: #1DB954;
 }
 
 .hero-icons i, .footer-icons i:not(:nth-child(6)) {
@@ -328,8 +350,9 @@ header {
   text-align: center;
   font-size: 2.8em;
   line-height: 150%;
-  margin-bottom: 35px;
+  /* margin-bottom: 35px; */
   color: var(--main-color);
+  margin-bottom: 30px;
 }
 
 /* segmented control */
@@ -377,7 +400,7 @@ header {
   margin-bottom: 30px;
 }
 
-#content-1 {
+#content-2 {
   transform: translateX(0px);
 }
 
@@ -385,7 +408,7 @@ header {
   width: 100%;
 }
 
-#btn-1 {
+#btn-2 {
   color: var(--main-color);
 }
 
@@ -423,7 +446,7 @@ header {
 .decorated > span{
   position: relative;
   display: inline-block;
-  color: var(--main-color);
+  color: var(--white);
 }
 
 .decorated > span:before, .decorated > span:after{
@@ -690,6 +713,16 @@ header {
   font-weight: 400;
 }
 
+.footer-logo a, .footer-icons a, .hero-icons a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: var(--white);
+}
+
 .footer-links li {
   line-height: 237%;
 }
@@ -700,7 +733,7 @@ header {
 
 footer {
   /* background-color: #0D0D2B; */
-  background-color: var(--main-color);
+  background-color: #2B076E;
   color: #ffffff;
 }
 
@@ -873,6 +906,10 @@ footer .copyright {
   }
 
   /* BELOW HEADER */
+  .below-header {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .below-header .item-one, 
   .below-header .item-two, 
   .below-header .item-three {
