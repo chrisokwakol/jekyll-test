@@ -25,7 +25,7 @@ comments: true
     Tags:
     {% for tag in page.tags %}
     <!-- {% capture tag_name %}{{ tag }}{% endcapture %} -->
-    <a href="/tag/{{ tag }}">{{ tag }}</nobr>&nbsp;</a>
+    <a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</nobr>&nbsp;</a>
     {% endfor %}
 
     {{ content }}
