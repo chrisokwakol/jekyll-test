@@ -8,13 +8,13 @@ header-image: "/assets/images/header3.jpg"
   <ul>
     {% for post in page.posts %}
     <li id="posts-with-tag-info">
-          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+          <h4><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h4>
           <div id="posts-with-tag-info-meta">
               <p>{{ post.author }}</p> &nbsp; &nbsp;
               <span style="font-weight: 300;">{{ post.date | date_to_string }}</span>
           </div>
           <p style="margin-bottom: 20px;">{{ post.content | markdownify | strip_html | truncatewords: 80 }}</p>
-          <a style="display: block; margin-bottom: 30px;" href="{{ post.url }}">Read article <i class="fas fa-angle-double-right"></i></a>
+          <a style="display: block; margin-bottom: 30px;" href="{{ site.baseurl }}/{{ post.url }}">Read article <i class="fas fa-angle-double-right"></i></a>
       </li>
     {% endfor %}
   </ul>
