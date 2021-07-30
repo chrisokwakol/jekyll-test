@@ -1313,8 +1313,12 @@ footer .copyright {
   }
 
   /* BLOG */
+  .blog-section {
+    padding-bottom: 0;
+  }
+  
   .blog-section h1 {
-    margin-top: 75px;
+    margin-top: 65px;
     margin-bottom: 49px;
   }
 
@@ -1383,6 +1387,7 @@ footer .copyright {
     min-width: 300px;
     padding-top: 10px;
     flex-direction: column;
+    margin-top: 20px;
   }
 
   .below-header-text h4 {

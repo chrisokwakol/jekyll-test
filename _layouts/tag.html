@@ -1,14 +1,13 @@
 ---
 layout: default
+header-image: "/assets/images/header3.jpg"
 ---
-
-{{ page.hero-title }}
 
 <section id="posts-with-tag">
     <h1 id="posts-with-tag-title">Posts tagged with "{{ page.title }}"</h1>
   <ul>
     {% for post in page.posts %}
-      <li id="posts-with-tag-info">
+    <li id="posts-with-tag-info">
           <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
           <div id="posts-with-tag-info-meta">
               <p>{{ post.author }}</p> &nbsp; &nbsp;
