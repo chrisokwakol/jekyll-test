@@ -226,7 +226,8 @@ header-image: "/assets/images/header3.jpg"
                     <img class="animated bounceInLeft" src="{{ site.baseurl }}/{{ post.header-image }}" alt="" srcset=""><a href="{{ post.url }}"></a>
                 </a>
                 <div id="blog-post-card-content">
-                    <h2 class="animated bounceInRight"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <!-- <h2 class="animated bounceInRight"><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h2> -->
+                    <h2 class="animated bounceInRight"><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h2>
                     <small>{{ post.date | date_to_string }}</small>
                     <hr 
                         style="height: 4px; max-width: 70px; text-align: start; background-color: #2A72ED; margin-top: 10px; margin-bottom: 10px;"

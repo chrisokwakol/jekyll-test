@@ -1,6 +1,6 @@
-I"Ÿ<div id="post" class="code-syntax-post">
+I"<div id="post" class="code-syntax-post">
     <h2>Popovers</h2>
-    <img class="code-sample" src="/assets/images/blog/code_syntax/popover.png" alt="" srcset="" />
+    <img class="code-sample" src="http://USERNAME.github.io/assets/images/blog/code_syntax/popover.png" alt="" srcset="" />
     
     <h2>Code blocks</h2>
     <p>
@@ -8,19 +8,19 @@
     </p>
     
     <p>Here is markdown</p>
-    <img class="code-sample" src="/assets/images/blog/code_syntax/markdown.png" alt="" srcset="" />
+    <img class="code-sample" src="http://USERNAME.github.io/assets/images/blog/code_syntax/markdown.png" alt="" srcset="" />
     
     <!-- Css example -->
     <p>This is a CSS example:</p>
-    <img class="code-sample" src="/assets/images/blog/code_syntax/css.png" alt="" srcset="" />
+    <img class="code-sample" src="http://USERNAME.github.io/assets/images/blog/code_syntax/css.png" alt="" srcset="" />
 
     <!-- Html example -->
     <p>And this is a HTML example, with a linenumber:</p>
-    <img class="code-sample" src="/assets/images/blog/code_syntax/html.png" alt="" srcset="" />
+    <img class="code-sample" src="http://USERNAME.github.io/assets/images/blog/code_syntax/html.png" alt="" srcset="" />
 
     <!-- Ruby example -->
     <p>Last, a Ruby example:</p>
-    <img class="code-sample" src="/assets/images/blog/code_syntax/ruby.png" alt="" srcset="" />
+    <img class="code-sample" src="http://USERNAME.github.io/assets/images/blog/code_syntax/ruby.png" alt="" srcset="" />
 
 </div>
 :ET
