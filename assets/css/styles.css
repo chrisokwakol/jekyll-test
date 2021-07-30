@@ -274,9 +274,10 @@ header {
 
 .below-header .item-one, .below-header .item-two, .below-header .item-three {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   box-shadow: 0px 5px 10px 3px #BBBBE1;
-  padding: 15px;
+  padding: 30px;
   border-radius: 10px;
 } 
 
@@ -307,6 +308,7 @@ header {
   line-height: 76px;
   text-align: center;
   color: var(--main-color);
+  text-shadow: -1px 1px 0px rgb(0 0 0 / 83%);
 }
 
 .about-section h4 {
@@ -380,6 +382,7 @@ header {
   /* margin-bottom: 35px; */
   color: var(--main-color);
   margin-bottom: 30px;
+  text-shadow: -1px 0px 0px rgb(0 0 0 / 83%);
 }
 
 /* segmented control */
@@ -1303,12 +1306,27 @@ footer .copyright {
   }
 
   /* BELOW HEADER */
+  .below-header .item-one, .below-header .item-two, .below-header .item-three {
+    min-width: 300px;
+    padding-top: 10px;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 40px;
+    max-width: 300px;
+    text-align: center;
+  }
+
   .below-header {
     margin: 40px auto;   
   }
 
+  .below-header-icon {
+    margin: 15px auto;
+  }
+
   .below-header-icon i {
     font-size: 2.5em;
+    text-align: center;
   }
 
   .below-header-text h4 {
@@ -1391,6 +1409,9 @@ footer .copyright {
     padding-top: 10px;
     flex-direction: column;
     margin-top: 20px;
+    padding: 40px;
+    max-width: 300px;
+    text-align: center;
   }
 
   .below-header-text h4 {
