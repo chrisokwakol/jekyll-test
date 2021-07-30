@@ -275,6 +275,9 @@ header {
 .below-header .item-one, .below-header .item-two, .below-header .item-three {
   display: flex;
   flex-wrap: wrap;
+  box-shadow: 0px 5px 10px 3px #BBBBE1;
+  padding: 15px;
+  border-radius: 10px;
 } 
 
 .below-header-icon {
@@ -1396,7 +1399,7 @@ footer .copyright {
   }
 
   .below-header .item-two {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
   }
 
   .below-header-icon {
