@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>python - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <link rel="stylesheet" href="/assets/css/animations.css" type="text/css">
+    <script async src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <!-- <img id="header-bg" src="" alt="" srcset=""> -->
+    <img id="header-bg" src="/" alt="" srcset="">
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft"></h1>
+        <h3 class="animated bounceInRight"></h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    <section id="posts-with-tag">
+    <h1 id="posts-with-tag-title">Posts tagged with "python"</h1>
+  <ul>
+    
+    <li id="posts-with-tag-info">
+          <h4><a href="/coding/2020/02/26/sorting-out-modules-in-python/">Sorting Out Modules In Python</a></h4>
+          <div id="posts-with-tag-info-meta">
+              <p>Matt Ralston</p> &nbsp; &nbsp;
+              <span style="font-weight: 300;">26 Feb 2020</span>
+          </div>
+          <p style="margin-bottom: 20px;">Oh yeah, it’s all coming together If you’re comfortable with the differences between dictionaries and modules, skip ahead to the section about modules where I explain directory layout and importing and contrast modules with object hierarchies. What are dictionaries again? Imagine a magical backpack that can store as much information as you can fit in memory. The one rule of using the magic backpack, is that each time you need a new pocket or location to store something in it,...</p>
+          <a style="display: block; margin-bottom: 30px;" href="/coding/2020/02/26/sorting-out-modules-in-python/">Read article <i class="fas fa-angle-double-right"></i></a>
+      </li>
+    
+    <li id="posts-with-tag-info">
+          <h4><a href="/coding/2019/08/26/kmer-database-format-part-1/">Kmer Database Format Part 1</a></h4>
+          <div id="posts-with-tag-info-meta">
+              <p>Matt Ralston</p> &nbsp; &nbsp;
+              <span style="font-weight: 300;">26 Aug 2019</span>
+          </div>
+          <p style="margin-bottom: 20px;">The goal of this blog post is to introduce the concepts of k-mer subsequences and blocked GNU-zip file (.bgzf) and suggest that they be used together to form a new file specification for younger bioinformaticians. If I'm successful, the reader should have a basic understanding of common k-mer packages, my opinion on the algorithms and APIs, and the challenge of understanding advanced computer science and benchmarking concepts utilized by those packages/algorithms from the eyes of novice, beginner, and even intermediate...</p>
+          <a style="display: block; margin-bottom: 30px;" href="/coding/2019/08/26/kmer-database-format-part-1/">Read article <i class="fas fa-angle-double-right"></i></a>
+      </li>
+    
+    <li id="posts-with-tag-info">
+          <h4><a href="/coding/2019/05/15/how-to-build-a-scientific-calculator-in-Python-part-1/">How To Build A Scientific Calculator In Python Part 1</a></h4>
+          <div id="posts-with-tag-info-meta">
+              <p>Matt Ralston</p> &nbsp; &nbsp;
+              <span style="font-weight: 300;">15 May 2019</span>
+          </div>
+          <p style="margin-bottom: 20px;">About a 45 min read. Introduction Bioinformatics research in 2019 relies on high-performance, compiled C, C++, or Java programs to solve alignment and assembly problems efficiently. However, interpreted scripting languages, such as Python, Perl, and shell languages (bash, csh, zsh, fish), are needed afterwards for further calculation, quality control, visualization, and more. Novel metrics, normalizations, and even complex algorithms are often prototyped in ‘beginner’ languages. Some metrics or algorithms prototyped in this way are so useful that a company or...</p>
+          <a style="display: block; margin-bottom: 30px;" href="/coding/2019/05/15/how-to-build-a-scientific-calculator-in-Python-part-1/">Read article <i class="fas fa-angle-double-right"></i></a>
+      </li>
+    
+    <li id="posts-with-tag-info">
+          <h4><a href="/2018/04/14/beginner-python-arrays/">Beginner Python Arrays</a></h4>
+          <div id="posts-with-tag-info-meta">
+              <p>Matt Ralston</p> &nbsp; &nbsp;
+              <span style="font-weight: 300;">14 Apr 2018</span>
+          </div>
+          <p style="margin-bottom: 20px;">Hello everyone! Today we'll be talking about essential array/list methods in different languages, reminding our readers of differences across languages. As beginner programmers, many of us are not aware of differences in the implementations of fundamental structures between languages. While we occasionally hear generalizations (perl is faster than python for strings etc.), benchmarking is more common among mature libraries/packages than standard library or primitive data structures. An algorithm's cost depends on its data structures and their instance methods. For example,...</p>
+          <a style="display: block; margin-bottom: 30px;" href="/2018/04/14/beginner-python-arrays/">Read article <i class="fas fa-angle-double-right"></i></a>
+      </li>
+    
+    <li id="posts-with-tag-info">
+          <h4><a href="/2018/03/20/thoughts-on-sphinx/">Thoughts On Sphinx</a></h4>
+          <div id="posts-with-tag-info-meta">
+              <p>Matt Ralston</p> &nbsp; &nbsp;
+              <span style="font-weight: 300;">20 Mar 2018</span>
+          </div>
+          <p style="margin-bottom: 20px;">I’ve been exploring the Python documentation system for ReadTheDocs with Sphinx. It could be that I’m dense, but the sphinx-quickstart command seems horribly divorced from most of the automagic documentation goals of the Sphinx project. After following several guides1, 2 I noticed that only an index.rst had been created in the _sources directory. Brandon’s guide suggests that adding your module to either your PYTHONPATH or to your conf.py before make html would lead to autodoc recognizing your package. I wasn’t...</p>
+          <a style="display: block; margin-bottom: 30px;" href="/2018/03/20/thoughts-on-sphinx/">Read article <i class="fas fa-angle-double-right"></i></a>
+      </li>
+    
+  </ul>
+</section>
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/cv">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>
