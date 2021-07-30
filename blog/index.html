@@ -1,0 +1,78 @@
+---
+layout: default
+title: Blog
+<!-- permalink: /blog/ -->
+hero-title: Not Very Humerus
+hero-subtitle: Open-source bioinformatics blog
+header-image: "/assets/images/header.jpg"
+author: Matt Ralston
+---  
+
+<!-- This loops through the paginated posts -->
+<div class="blog-page-section">
+    <div class="blog-posts-main">
+        {% for post in paginator.posts reversed %}
+        <div class="blog-post">
+            <img src="{{ post.header-image }}" alt="" srcset="">
+            <div class="blog-content">
+                <h4>{{ post.category }}</h4>
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <!-- {{ post.tags }} -->
+                <div class="date-author">
+                    <span>{{ post.date | date_to_string }}</span> &nbsp;
+                    <span>By</span>
+                    <span>{{ page.author }}</span>
+                </div>
+                <p class="blog-content-excerpt">{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- Pagination links -->
+        {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url }}"><i class="fas fa-chevron-left"></i> PREV</a>
+        {% else %}
+            <span>&laquo; Prev</span>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+            <em>{{ page }}</em>
+            {% elsif page == 1 %}
+            <a id="pagination-num" href="{{ '/blog/' | relative_url }}">{{ page }}</a>
+            {% else %}
+            <a id="pagination-num" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+        {% else %}
+            <span>NEXT <i class="fas fa-chevron-right"></i></span>
+        {% endif %}
+        </div>
+        {% endif %}
+    </div> 
+
+    <!-- RECENT POSTS -->
+    <div class="blog-posts-sidebar">
+        <h2 class="recent-posts-title">Recent posts</h2>
+        {% for post in site.posts limit:4 %}
+        <div class="blog-post">
+            <img src="{{ post.header-image }}" alt="" srcset="">
+            <div class="blog-content">
+                <h4>{{ post.category }}</h4>
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <div class="date-author">
+                    <span>{{ post.date | date_to_string }}</span> &nbsp;
+                    <span>By</span>
+                    <span>{{ page.author }}</span>
+                </div>
+                <p class="blog-content-excerpt">{{ post.content | markdownify | strip_html | truncatewords: 25 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

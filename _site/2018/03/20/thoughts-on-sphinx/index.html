@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Thoughts On Sphinx - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <img id="header-bg" src="/assets/images/blog/code_syntax/feature.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="//assets/images/blog/code_syntax/feature.jpg" alt="" srcset=""> -->
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft">On Python Documentation with Sphinx</h1>
+        <h3 class="animated bounceInRight"></h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    <hr class="single-post-hr">
+<div class="about-author">
+    <div class="details">
+        <img src="/assets/images/blog/user.png" alt="" srcset="">
+        <div>
+            <h4>Matt Ralston</h4>
+            <span>20 Mar 2018</span> &nbsp;
+        </div>
+    </div>
+    <div class="icons">
+        <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+    </div>
+</div>
+
+<div class="single-post">
+
+    Tags:
+    
+    <!--  -->
+    <a href="/tag/python">python</nobr>&nbsp;</a>
+    
+    <!--  -->
+    <a href="/tag/sphinx">sphinx</nobr>&nbsp;</a>
+    
+
+    <div id="post">
+    <p>
+        I’ve been exploring the Python documentation system for ReadTheDocs with Sphinx. It could be that I’m dense, but the <code class="code-pink">sphinx-quickstart</code> command seems horribly divorced from most of the automagic documentation goals of the Sphinx project. After following several guides1, 2 I noticed that only an index.rst had been created in the <code class="code-pink">_sources</code> directory. Brandon’s guide suggests that adding your module to either your PYTHONPATH or to your conf.py before <code class="code-pink">make html</code> would lead to autodoc recognizing your package. I wasn’t able to get this to work on OSX Sierra using a virtualenv. After looking through more tutorials, I encountered some suggestions for the <code class="code-pink">sphinx-apidoc</code> command, without actual invocation details.
+    </p>
+    <p>
+        So it seems that to generate the documentation for a new module, you must run <code class="code-pink">sphinx-apidoc</code> to generate the module’s <code class="code-pink">.rst</code> file, and then run <code class="code-pink">make html</code> to generate the html. It’s remarkably easy when you figure it out, but kind of poorly documented considering the docs come from Sphinx and RTD directly.
+    </p>
+    <p>
+        I suppose I assumed that <code class="code-pink">sphinx-quickstart</code> would have an option to specify existing module/lib directories and automatically bootstrap a Python package/project to make it a simpler experience. I highly recommend sphinx-mode.el for Emacs users, to automatically generate Sphinx-format docstrings and capture most of the function signature.
+    </p>
+</div>
+    
+    <a href="https://www.patreon.com/TheWaterAndWind">
+        <button style="margin-top: 40px; margin-bottom: 40px;"><i class="fab fa-patreon fa-2x"></i>&nbsp;&nbsp;Become a Patreon</button>
+    </a>
+    <div style="margin-top: 20px;">
+        
+            <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    
+    var disqus_config = function () {
+    this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://matthewralston.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+    </div>
+</div>
+
+
+
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>

@@ -1,0 +1,26 @@
+I"Ÿ<div id="post" class="code-syntax-post">
+    <h2>Popovers</h2>
+    <img class="code-sample" src="/assets/images/blog/code_syntax/popover.png" alt="" srcset="" />
+    
+    <h2>Code blocks</h2>
+    <p>
+        To insert highlight code inside of a post, itâ€™s enough to use some specific tags, has directly described into the Jekyll documentation. In this way the code will be included into a .highlight CSS class and will be highlight according to the syntax.scss file. This is the standard style adopted by Github to highlight the code.
+    </p>
+    
+    <p>Here is markdown</p>
+    <img class="code-sample" src="/assets/images/blog/code_syntax/markdown.png" alt="" srcset="" />
+    
+    <!-- Css example -->
+    <p>This is a CSS example:</p>
+    <img class="code-sample" src="/assets/images/blog/code_syntax/css.png" alt="" srcset="" />
+
+    <!-- Html example -->
+    <p>And this is a HTML example, with a linenumber:</p>
+    <img class="code-sample" src="/assets/images/blog/code_syntax/html.png" alt="" srcset="" />
+
+    <!-- Ruby example -->
+    <p>Last, a Ruby example:</p>
+    <img class="code-sample" src="/assets/images/blog/code_syntax/ruby.png" alt="" srcset="" />
+
+</div>
+:ET

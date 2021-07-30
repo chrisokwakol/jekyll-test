@@ -1,0 +1,165 @@
+I"õ?<div id="post">
+    <div>
+        <small style="margin-top: 30px;"><em>This article is geared for novice to intermediate users of OSX and Linux, perhaps a 20min read.</em></small>
+    </div>
+    <h2>Motivation</h2>
+    <p>
+        At this point in your career, you may have your own hardware systems that you customize, optimize, and perhaps even maintain. It could be your laptop, your desktop dextop, or even that fancy server you keep in your closet.
+    </p>
+    <figure>
+        <img src="/assets/images/blog/aws_s3_buckup_tutorial/badass_koala_rm-rf.gif" alt="" style="max-width: 100%;" />
+        <figcaption>
+            Happens more than you think in sysadmin
+        </figcaption>
+    </figure>
+    <h2>Volatility</h2>
+    <p>
+        Whatever your case may be, a working or semi-optimal configuration is valuable enough to backup and maintain. This may especially be the case if you modify your configurations, update packages/libraries, or have a rolling release distribution. Torching and restoring your system is a good excercise, especially if there isnt a programatic way to bootstrap and configure your system. Simply put, you tweak your system more than the average user does and need to hedge against the volatility of your own system.
+    </p>
+    <h2>Halp! The update broke my system! A word of caution</h2>
+    <p>
+        A challenge for system maintenance is the choices involved in installing/upgrading packages that alter the behavior of your system without reading all the source code. Uninstalls, downgrades, or reversions can be quite simple in the presence of OS or language package managers. Sometimes the issues do not manifest until later, as I experienced when updating several core packages recently. I rebooted and discovered my netctl service failed to boot properly, and I could not debug my system without my laptop. After reading stackexchange and the Arch wiki, I eventually restored my system. Had the issue been more catastrophic, I would have lost all the data since my last backup. A full system reset is not ideal, but would have been better than losing my whole OS and data if I had zero backups. This is the risk of brew update, pacman -Syu, apt-get update, etc.
+    </p>
+    <h2>Introduction</h2>
+    <p>
+        This article intends to inform the reader about key questions and options available for study when considering backup solutions, before presenting a tutorial for intermediate/advanced users to backup their data (OS, home, media) to S3 storage for cheap and reliable storage. It will suggest options for users that don't feel comfortable at the terminal as well. System maintenance is a well covered topic in many linux forums and wikis and this guide is neither prescriptive nor exhaustive. I'm just relaying what worked for me.
+    </p>
+    <p>
+        What is the nature of the data you want to backup (OS, media, personal data)? Is there certain data you wouldn't want to send to a 3rd party? Do you have a good reason for OS backup instead of reinstallation? Is there a good reason why onsite HDD storage isn't sufficient? Do you need or want an app/GUI? Do you need to serve the data to other machines? Before going any further, I'll suggest that simple solutions like Time Machine may make more sense for beginners while intermediate users should read the entire article.
+    </p>
+    <p>
+        If you're not sure which type of user you are, check out this meme.
+    </p>
+    <h2>Basic Concepts and Terminology</h2>
+    <p>
+        If you're looking to serve media to other devices, you might get away with an NFS server on your OS. If the storage is substantial or you'd like to skip configuration, your best option is Network-attached storage (NAS). Several concepts are important to understand w.r.t. backup, storage, and system restore that I outline here before making suggestions.
+    </p>
+    <h2>Redundancy</h2>
+    <p>
+        Backup-as-a-service (BaaS) is a big industry, expected to reach ~$5B by 2023. In this world, a rule of thumb called '3-2-1' is used to describe rules of backup and redundancy. Creating diversity in your storage/retrieval options prevents vendor/format lock-in and increases the fault-tolerance. Options like RAID arrays decrease risks from manufacturer defects, corruption, or physical damage. The complete tutorial covers offsite storage, external HDD backup, creating at least 2 copies of the data (not including the original). This rule of thumb matters most for mission critical data, but might not apply for static, read-only data such as media archives.
+    </p>
+    <div>
+        <ol type="1">
+            <li>At least 3 copies of data</li>
+            <li>At least 2 different physical storage formats (internal/external HDD, RAID array, cloud, etc.)</li>
+            <li>At least 1 copy offsite</li>
+        </ol>
+    </div>
+    <h2>Synchronization</h2>
+    <p>
+        Synchronization implies duplication, but in this context refers to data movement between physical storage drives (internal SSD =&gt; external HDD) or locations (laptop =&gt; cloud). You wouldn't use awscli s3 sync on your system as it would destroy POSIX ACLs and doesn't achieve compression. That said, tools like rsync and aws s3 sync are excellent tools for moving data between virtual or physical locations efficiently, avoiding redundant transfers and saving network bandwidth.
+    </p>
+    <h2>Compression</h2>
+    <p>
+        Synchronization implies duplication, but in this context refers to data movement between physical storage drives (internal SSD =&gt; external HDD) or locations (laptop =&gt; cloud). You wouldn't use awscli s3 sync on your system as it would destroy POSIX ACLs and doesn't achieve compression. That said, tools like rsync and aws s3 sync are excellent tools for moving data between virtual or physical locations efficiently, avoiding redundant transfers and saving network bandwidth.
+    </p>
+    <h2>Compression</h2>
+    <p>
+        Files and directory structures can be stored cheaply in compressed archive format with permissions/metadata preserved. The downside of uncompressed storage is network/IO bandwidth when synchronizing. Compressed data cannot be inspected easily or individually but provides dependable storage since (de)compression artifacts are very rare. RAID storage of uncompressed data could guard against the artifacts if more complicated checksum validation routines are used. It is very possible that BaaS services utilize some form of compression, but those savings may not be passed to consumers. YMMV.
+    </p>
+    <h2>Encryption</h2>
+    <p>
+        Encryption is simply the security of your data (relative to brute force) in transit or at rest, and should be of concern when shipping to 3rd parties. KMS is the official AWS offering for S3 data encryption at rest. If you're comfortable using GPG encryption in your scripts, you can move data through that layer if you wish, although hardcoding passphrases in scripts or passphrase files is not considered a secure practice.
+    </p>
+    <h2>Beginners</h2>
+    <h2>Time Machine</h2>
+    <p>
+        OSX users in particular benefit from Apple's Disk Utility and its backup utility 'Time Machine'. Advantages of Time Machine include a powerful and intuitive GUI and perhaps the best cost profile of beginner backup solutions. Drawbacks of this method includes OS/Vendor lock-in, lack of format conversion utilities, and lack of off-site options.
+    </p>
+    <p>
+        However, the Apple Time Capsule is fairly expensive given the amount of storage available. I would recommend buying a Seagate or Western Digital external HDD (avoid portable USB-powered options, which can damage your motherboard), reformatting the drive with Disk Utility, and configure Time Machine to use this device. Refer to Apple Support and at least a dozen CNET tutorials for further instructions.
+    </p>
+    <h2>Backup as a Service (BaaS)</h2>
+    <p>
+        For users who are looking to augment or replace local personal backups with cloud storage, BaaS are simple and often enterprise-level solutions. Some provide options for choosing and/or migrating between cloud providers, and provide pay-as-you-go models instead of up-front costs or maintaining knowledge of storage options. Downsides can include difficulties migrating or converting archive format, vendor lock-in, lack of physical access, or lack of options for apps/CLIs. I will leave review of the large number of BaaS providers to other authors, but simply suggest that this option may be optimal for users who don't want to customize their own backup schedule. Notable options for Mac users include Arq, Duplicati, and CloudBerry.
+    </p>
+    <h2>Intermediate || Advanced Users</h2>
+    <p>
+        In the desire for cheap and customizable storage options, and with a bit of an empty pocket, I decided to look to the Arch Wiki for mature suggestions on OSS backup routines, looking at AWS for affordable and simple storage solutions. Costs are considerably aggressive cheap with S3 and can be reduced further with Glacier. Ignoring the AWS-specific synchronization step, you can extend the advice here for a more general solution.
+    </p>
+    <h2>C o n s i d e r a t i o n s</h2>
+    <p>
+        A variety of factors are at play when developing a backup solution that makes sense for you. Automating a full operating system backup routine is not trivial and can definitely affect you personally through privacy, stability, and this guide is not intended to replace or augment the work of professional systems administrators who can provide stable and reliable backup solutions. With that said, if you like to customize things, consider the following.
+    </p>
+    <ul>
+        <li>At least 4 types of data on your system</li>
+        <ol type="1" style="margin: 20px;">
+            <li>Operating System ( <code class="code-pink">/usr /lib /etc /var</code> )</li>
+            <li>Home ( <code class="code-pink">/home/\&lt;\username&lt;</code> )</li>
+            <li>Operating System ( <code class="code-pink">/usr /lib /etc /var</code> )</li>
+            <li>Operating System ( <code class="code-pink">/usr /lib /etc /var</code> )</li>
+        </ol>
+        <p>
+            If you're a part of the PCMR Steam borg, you'll note that Steam games and configuration files can almost completely be omitted from backup, if your games support storage of savegames with Steam. Home backup, including <code class="code-pink">~/.ssh</code>, <code class="code-pink">~/.gnupg</code> and other personal configurations should almost always be ommitted from operating system backup. Personal media change rarely (on individual files) and may benefit more from uncompressed mirroring more than archiving and compression, as many media formats are already optimized for storage and transmission. In this case, off-site storage may be less critical given the concerns of volatility.
+        </p>
+
+        <li>Redundancy, off-prem, and privacy</li>
+        <p>
+            External HDDs have an upfront cost that may prohibit some users from backup, but provide the benefits of ease of use, formatting and migration options. Cloud storage options (not BaaS) provide optimal cost profiles, but may raise additional considerations about privacy.
+        </p>
+
+        <li>Schedule and migration policy</li>
+        <p>
+            Scheduling can easily be handled with cronjobs or systemd, BaaS options (arq), or other FOSS or proprietary options. Migration options include considerations about sync and archive formatting such as snapshotting, incremental, and ACL considerations across servers or locations. Additionally, migrating old archives to 'cold' storage such as Glacier can provide good cost profile if they are infrequently accessed (&lt; 2x/year).
+        </p>
+
+        <li>Backup Software</li>
+        <p>
+            Finally, the choices of OSS or proprietary snapshot (e.g. GNU tar) and incremental synchronization software (e.g. rsync) should be considered fully, and deep comparisons are available elsewhere. Reviews and options abound and there is never a shortage of guides for this topic, many of which gravitate towards rsync as a fairly reliable, available, and robust algorithm for synchronization. When combined with utilities like btrfs and GNU tar, sophisticated backup routines can be formed. So without further adieu, here's my pleby attempt!
+        </p>
+    </ul>
+
+    <h2>Method Overview</h2>
+    <p>
+        To begin, make a list of system directories you won't be backing up with your system backup. Media and dataset backups should be kept separate. I would avoid syncing contents of your home directory if possible, which rarely contains operating system settings but contains ssh keys, code or other data that should be kept separated from OS backups. You should be able to restore system function with root access, and might even need to create new user ids for your system on other hardware.
+    </p>
+
+    <h2>Excluded directories</h2>
+    <ul>
+        <li>/dev/*</li>
+        <li>/mnt/*</li>
+        <li>/home/user/*</li>
+        <li>/proc/*</li>
+        <li>/sys/*</li>
+        <li>/tmp/*</li>
+        <li>/run/*</li>
+        <li>/srv/*</li>
+    </ul>
+
+    <h2>Rsync as an archive utility</h2>
+    <p>
+        Armed with this list, I'd refer most Linux or OSX users to the Arch linux wiki page on System Backup. The guide suggests running the
+    </p>
+
+    <blockquote>
+        rsync -aAXv / /backupDestination
+    </blockquote>
+    <p>
+        command as root to produce verbose logging of archive mode, preserving permissions. Running the command as the root user ensures that all system files and OS configurations are preserved in the archive. Note that the rsync utility is sensitive to the presence of leading and trailing forward slashes when specifying excludes, source, and destination directories.
+    </p>
+    <p>
+        Now, after you've created destination partitions on mounted drives for your backup, I'd create two subdirectories 'current' and 'tarballs' to contain the full current mirror of your OS and the Gzip compressed tarball archive snapshots. The current directory (e.g. /storage/backups/current) will be the destination directory for the rsync.
+    </p>
+    <h2>Snapshots with Tar</h2>
+    <p>
+        Next, we'll take snapshots of the filesystem with GNU tar. At this point in your Linux career you've probably encountered tarballs and recall attribute preservation and compression as primary features of GNU tar. On a fresh OS install, you should be able to rsync most of your configurations over, and reboot to restore your system.
+    </p>
+    <p>
+        Now that we have an idea about making our first snapshot, we'll sync the snapshots to Amazon S3
+    </p>
+    <h2>Snapshot Storage with S3</h2>
+    <p>
+        We've created copies of the OS: uncompressed and archived. Now we can ship our tarballs off to AWS S3 for <a href="https://aws.amazon.com/s3/pricing/">cheap storage</a>. S3 is known for cheap storage prices on the order of $0.02 per Gb per month. We can store our snapshots in S3 for quick recovery and offsite storage. If cost is an issue, low-availability and Glacier migration policies are options to reduce the cost further 5-10 fold.
+    </p>
+    <p>
+        If you don't have it already, the awscli can be installed with the Pip Python package manager. If installed system wide, you're good to go. If you've installed it with a user-specific virtual environment, you may need to activate the virtual environment as root to use the awscli or simply <code class="code-pink">su $USER</code> to a user with it enabled and with proper credentials. If the number of artifacts in your bucket becomes large, you may want to consider deleting certain backups you don't need
+    </p>
+    <blockquote>
+        aws s3 sync /storage/backups/tarballs s3://mybucketname --metadata Backups=Dextop
+    </blockquote>
+    <h2>Backup Script Gist</h2>
+    <p>
+        When you pull everything together, it might look something like the following. Thank you for reading this far in this post and please feel free to comment on my gist on Github with any suggestions, insults, or recommendations. I had fun working on my system for this blog post and enjoy the peace of mind knowing my system is more stable to play with. Thanks again and let me know what you think!
+    </p>
+</div>
+:ET

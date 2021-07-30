@@ -1,7 +1,43 @@
 ---
 layout: default
----
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+title: Home 
+author: Matt Ralston
+comments: true
+--- 
+ 
+<hr class="single-post-hr">
+<div class="about-author">
+    <div class="details">
+        <img src="/assets/images/blog/user.png" alt="" srcset="">
+        <div>
+            <h4>{{ page.author }}</h4>
+            <span>{{ page.date | date_to_string }}</span> &nbsp;
+        </div>
+    </div>
+    <div class="icons">
+        <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+    </div>
+</div>
 
-{{ content }}
+<div class="single-post">
+
+    Tags:
+    {% for tag in page.tags %}
+    <!-- {% capture tag_name %}{{ tag }}{% endcapture %} -->
+    <a href="/tag/{{ tag }}">{{ tag }}</nobr>&nbsp;</a>
+    {% endfor %}
+
+    {{ content }}
+    
+    <a href="https://www.patreon.com/TheWaterAndWind">
+        <button style="margin-top: 40px; margin-bottom: 40px;"><i class="fab fa-patreon fa-2x"></i>&nbsp;&nbsp;Become a Patreon</button>
+    </a>
+    <div style="margin-top: 20px;">
+        {% if page.comments != false %}
+            {% include disqus_comments.html %}
+        {% endif %}
+    </div>
+</div>
+
+

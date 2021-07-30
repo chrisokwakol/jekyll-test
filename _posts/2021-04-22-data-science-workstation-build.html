@@ -1,0 +1,222 @@
+---
+layout: post
+author: Matt Ralston
+header-image: "/assets/images/blog/workstation/feature.jpg"
+hero-title: Gradschool workstation.
+hero-subtitle: Basic overview of hardware and Arch-based OS
+category: Coding
+tags: meta prose beginner sysadmin 
+---
+ 
+<div id="post">
+    <p>
+        In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school. We begin with a look at what defines a workstation in a way that differentiates it from a consumer PC, which is typically a 4-8 core machine, with limited RAM and often an older generation GPU. Then we describe the main workstation build I have been working on. Next, I briefly review the choice of operating system and essential productivity tools. Finally, I describe a data science workflow that is typical for my bioinformatics interests.
+    </p>
+    <small><em>About a 10 minute read.</em></small>
+    <h2>What is a workstation?</h2>
+    <p>
+        A workstation is a mid-to-large range tower that typically has pro-sumer or industrial quality computing parts inside. A workstation could include a high-end consumer chip like an Intel 11900K or a Ryzen 5950X, but at this time I recommend AMD’s Threadripper and Threadripper Pro platforms for DIY workstations. There are offerings by consumer and commercial vendors such as Dell and Lenovo, and I’ve used Lenovo products almost exclusively in my pharmaceutical and agritech positions. A workstation may have a workstation level graphics card (Nvidia Quadro series) in addition to larger amounts of memory (typically 64, 128, 256, 512, and up).
+    </p>
+    <h2>What if my computing needs are large?</h2>
+    <p>
+        Compute, memory, and storage needs can be large for some genomics and data science workloads, and you may need components for a personal machine that allow you to do advanced visualization, modeling, learning, or even just basic data processing. Here we review the most important parts of a workstation to understand from a technical specifications perspective.
+    </p>
+    <h2>RAM</h2>
+    <p>
+        Unfortunately, short of buying an ATX or other server motherboard and using a server chip inside a standard or large form factor case, most consumer chipsets can only support up to 256GB of ram, though theoretically the AMD Threadripper platform could support much larger ranges, or perhaps that will be relegated to the Threadripper Pro platform.
+    </p>
+    <h2>CPU</h2>
+    <p>
+        However, both AMD Threadripper and Threadripper Pro platforms support up to 64 core, 128 thread workloads on a single board. I highly recommend these for any small-scale compute workloads, suitable for a workstation. Anything more demanding should typically be run on a server platform, which you would conceivably have access to at your institution. The principle qualities of a processor to pay attention to are the frequency (measured in GHz), the core/thread count, and the chipset (how many extra lanes of PCI-e are available for high-speed storage through the motherboard).
+    </p>
+    <h2>GPU</h2>
+    <p>
+        For this, it really depends on the type of GPU workload you may have. For some simple TSVs, most consumer graphics cards should be sufficient (For example, the 3060-3080TI on NVidia’s side, and sadly I can’t recommend AMD for data science purposes here, even though I’m team Red for CPU). The principle units to consider for the graphics processor are the CUDA/shader core counts, the VRAM, and perhaps the cooling properties. For certain workloads, the 3090, the A6000, or other previous generation Tesla/Pascal model Titans or Quadro series graphics cards have sufficient VRAM for most workloads. 8-16GB is sufficient for most tasks in my opinion, though the 3090 has a whopping 24GB of VRAM, and at the time of publishing, the top of the line, workstation graphics card was the PNY A6000 with 48GB of VRAM.
+    </p>
+    <p>
+        I’d look to the rest of the web for specific comparisons of the number of CUDA cores available for each model of each generation at the time of publishing. Sadly, at the time of publishing I can’t see what the future holds for team Red as far as data science applications goes, so again I’ll recommend the reader to look at Nvidia’s offerings.
+    </p>
+    <h2>Storage</h2>
+    <p>
+        Certainly, genomics and data science workloads can create a lot of data constraint issues, demands on IOPS and throughput and storage medium and speed certainly matters. While older SATA standard HDDs and SSDs are fair for your large storage needs, faster and typically smaller PCI express NVMe storage media are quickly becoming the norm for consumer storage. I prefer to store my OS on a 2TB SATA SSD, data and “cold storage” on a 3TB HDD, and my datasets on my NVMe PCIe x16 storage AIC.
+    </p>
+    <p>
+        One caveat for most consumers is that the older generation (Intel 10,000 series) and below Intel chips have no PCIe Generation 4 connectivity, it’s older generation. Even if your motherboard has compatibility with Intel 10,000 series and supports gen 4, only the newest 11th gen chips from Intel support PCIe gen4. Ryzen series have had historically good support for PCIe gen4, and for considerably better prices for the core count. AMD Ryzen CPUs also overclock very well because they are unlocked by default, but anyways storage wise just make sure that both your CPU and motherboard are on the same standard, or you may be paying for features your hardware does not support.
+    </p>
+    <p>
+        I’d recommend at least 2Tb of fast PCIe gen4 storage, preferrably on a Threadripper system. I went with a PCIe gen4 x16 Add-In Card (AIC), that houses, powers, and cools 4 Corsair m600 2TB NVMe M.2 drives, which are RAIDed together on Linux with <a href="https://wiki.archlinux.org/index.php/RAID#Installation">mdadm</a> in RAID 0, for a whopping 21 GB/s read rates (on very specific workloads).
+    </p>
+    <h2>What if I don’t feel comfortable building my own?</h2>
+    <p>
+        Then I guess you have products, tech specs, component generations to compare, and perhaps discounts and support plans to compare between pre-built vendors. I think building a computer is a good exercise for anyone. Short of spending 10-30k for certain Lenovo workstation configurations, I would suggest building your own so that less money is spent on build fees and markups or that you don’t overspend for components that aren’t good quality. It’s highly worth it to do your own research, and this article is limited by its biases and timeliness. YMMV.
+    </p>
+    <h2>What is the most under-rated issue when building a workstation?</h2>
+    <p>
+        A crucial issue actually is cooling. The reason calculations perform so slowly on a Mac is that they become CPU throttled because of the heat constraints on the thermal design on everything except maybe the Mac Pro (again, timeliness). A disadvantage of liquid cooling is that its not designed for long-running calculations (several hours, multiple days etc). This produces wear on the pump that reduces the integrity over time, and eventually the AIO will need to be replaced. In several instances, AMD’s Threadripper platform performed better under a Noctua 140mm unit than compared to the top performing AIOs with sTRX4 mounting brackets according to a GamersNexus investigations. I’d stick to the Wraithripper or the Noctua units (I keep a 120mm unit as a backup) on air cooling, and I’d stay away from the Enermax LiqTech series, which, also according to GamersNexus and Level1Tech Youtube channels, report problems with many consumer’s AIOs.
+    </p>
+    <p>
+        For Intel and AMD platforms, I can’t give any specific recommendations other than 280 > 360 > 240 > 140 > 120mm radiator rule of thumb. I’d say that whatever your choice of cooler may be, please buy aftermarket and buy a premium airflow case to keep your components cool. This will help with system stability and performance when performing overclocking.
+    </p>
+    <h2>Where do I go for more information?</h2>
+    <p>
+        I would start with keeping up to date or reviewing the most recent build guides and hardware news from JayzTwoCents/LinusTechTips and GamersNexus. GamersNexus and Level1Techs have good overviews of prosumer, workstation quality, and server chips. GamersNexus also has the most comprehensive controlled experiments on the market. And I’d look to DeBauer and GamersNexus for overclocking basics.
+    </p>
+    <h2>Main PC Build</h2>
+    <a href="https://pcpartpicker.com/list/VMDcmk">PCPartPicker Part List</a>
+
+    <table class="pcpp-part-list" style="margin-top: 30px; margin-bottom: 30px;">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pcpp-part-list-type">CPU</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/kNyqqs/amd-ryzen-9-3960x-38-ghz-24-core-processor-100-100000010wof">AMD Threadripper 3960X 3.8 GHz 24-Core Processor</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/kNyqqs/amd-ryzen-9-3960x-38-ghz-24-core-processor-100-100000010wof">$1399.00 @ Adorama</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="pcpp-part-list-type">CPU Cooler</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/NDtWGX/noctua-nh-u12s-tr4-sp3-934-cfm-cpu-cooler-nh-u12s-tr4-sp3">Noctua NH-U12S TR4-SP3 54.97 CFM CPU Cooler</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/NDtWGX/noctua-nh-u12s-tr4-sp3-934-cfm-cpu-cooler-nh-u12s-tr4-sp3">$79.95 @ Amazon</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="pcpp-part-list-type">Motherboard</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/dkwkcf/asus-rog-strix-trx40-e-gaming-atx-strx4-motherboard-strix-trx40-e-gaming">Asus ROG Strix TRX40-E Gaming ATX sTRX4 Motherboard</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/dkwkcf/asus-rog-strix-trx40-e-gaming-atx-strx4-motherboard-strix-trx40-e-gaming">$1201.99 @ Amazon</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="pcpp-part-list-type">Memory</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/kmBhP6/gskill-ripjaws-v-64-gb-2-x-32-gb-ddr4-3600-memory-f4-3600c18d-64gvk">G.Skill Ripjaws V 64 GB (2 x 32 GB) DDR4-3600 CL18 Memory</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/kmBhP6/gskill-ripjaws-v-64-gb-2-x-32-gb-ddr4-3600-memory-f4-3600c18d-64gvk">$319.99 @ Newegg</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="pcpp-part-list-type">Memory</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/kmBhP6/gskill-ripjaws-v-64-gb-2-x-32-gb-ddr4-3600-memory-f4-3600c18d-64gvk">G.Skill Ripjaws V 64 GB (2 x 32 GB) DDR4-3600 CL18 Memory</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/kmBhP6/gskill-ripjaws-v-64-gb-2-x-32-gb-ddr4-3600-memory-f4-3600c18d-64gvk">$319.99 @ Newegg</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="pcpp-part-list-type">Storage</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/gCJmP6/corsair-mp600-force-series-gen4-1-tb-m2-2280-solid-state-drive-cssd-f1000gbmp600">Corsair MP600 Force Series Gen4 1 TB M.2-2280 NVME Solid State Drive</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/gCJmP6/corsair-mp600-force-series-gen4-1-tb-m2-2280-solid-state-drive-cssd-f1000gbmp600">$174.99 @ Amazon</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="pcpp-part-list-type">Storage</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/dQ66Mp/samsung-860-evo-2tb-25-solid-state-drive-mz-76e2t0bam">Samsung 860 Evo 2 TB 2.5" Solid State Drive</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/dQ66Mp/samsung-860-evo-2tb-25-solid-state-drive-mz-76e2t0bam">$298.95 @ Amazon</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="pcpp-part-list-type">Storage</td>
+            <td class="pcpp-part-list-item"><a href="https://pcpartpicker.com/product/jD3H99/seagate-barracuda-4tb-35-5400rpm-internal-hard-drive-st4000dm004">Seagate BarraCuda 4 TB 3.5" 5400RPM Internal Hard Drive</a></td>
+            <td class="pcpp-part-list-price">
+              <a href="https://pcpartpicker.com/product/jD3H99/seagate-barracuda-4tb-35-5400rpm-internal-hard-drive-st4000dm004">$84.99 @ Newegg</a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="pcpp-part-list-price-note">Prices include shipping, taxes, rebates, and discounts</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="pcpp-part-list-total">Total</td>
+            <td class="pcpp-part-list-total-price">$3879.85</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="pcpp-part-list-price-note">Generated by <a href="https://pcpartpicker.com">PCPartPicker</a> 2021-04-24 07:47 EDT-0400</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Okay, now for the main attraction. I started by reviewing the latest news on the Threadripper series, as I saw it was best suited for my needs. The 3990X certainly is attractive, but slightly outside of my price point for my CPU. I decided to keep the budget down, since I figured I’d be doing most of my compute on a server at school anyways. With a little bit of luck, my proposal for access to the University of Delaware’s high-compute server will be accepted when I present a prototype for my thesis.
+      </p>
+      <img src="/assets/images/blog/workstation/feature.jpg" id="workstation-img" alt="" srcset="">
+      <h2>CPU</h2>
+      <p>
+        So the core of the system is the 3960X Threadripper CPU with 128MB of L3 cache, 24 cores and 48 threads, base clock of 3.8GHz. This is a sufficient number of threads for some simple workflows with relatively low sample numbers, where the data processing can be done in parallel. Of course specific matrix manipulations can be done on either the CPU or GPU, depending on the implementation. This is why saving money for Quadro or A5000/A6000 graphics is worth it and I’ll discuss this next. I expect that serious multiprocessing might be done on a server for multi-night workloads, with small test batches being run on the local machine. The 3960X is technically the best value for the Threadripper series, as an additional $500 only gets you 8 more threads, and then the cost goes up considerably for the 3990X.
+      </p>
+      <h2>CPU cooler</h2>
+      <p>
+        The system is cooled by a h250i Elite Cappelix 360mm AIO CPU cooler from Corsair. The loop is completely closed, leakproof, and maintenance free. When the system stability starts becoming an issue and temperatures climb and fan/pump whine becomes a larger issue, then I’ll have to replace the CPU cooler with something else. This cooler keeps CPU temperatures around 38-41 degrees Celsius when idling and ramps as high as 68 degrees Celsius when under consistent load. I’d say this is reasonable performance so far, and I’ve had the cooler for about a month.
+      </p>
+      <img src="/assets/images/blog/workstation/workstation2.jpg" id="workstation-img" alt="" srcset="">
+      <h2>GPU</h2>
+      <p>
+        The second most important thing is the GPU. A large number of CUDA cores is necessary to perform calculations on complex matrix systems, decompositions, multiplications, model building, machine learning, and much more. Necessarily so, there can be a considerable advantage to having access to cards with large amounts of VRAM. In my case, I went with the A6000, and balanced this by having considerably higher system memory than VRAM, to make sure data can be properly handled. The A6000 has over 10k CUDA cores, which is more than sufficient for most genomics and data science workloads.
+      </p>
+      <h2>Memory/RAM</h2>
+      <p>
+        Next we have memory, and I have 256GB of G.Skill memory at 3600 and 4000 MHz (RipJaw and TridentZ, respectively), it’s technically a mixed kit for now. The clock speed is somewhat important with CPUs that are this powerful (more than 2-3GHz) needing data at larger rates, but amount is still technically a larger issue given the cost of RAM these days. The next thing we have to consider for memory is the Infinity Fabric Clock (FCLK) speed, to matcth a typically 2:1 ratio between the clock speed of AMD’s Infinity Fabric interconnection devices inside the CPU and the memory. This isn’t necessarily an aspect of the hardware, but it’s important to not overspend for memory that isn’t supported at speeds in your system.
+      </p>
+      <h2>NVMe Add-In Card (AIC)</h2>
+      <p>
+        And the other major component is the high-speed storage, typically via PCIe lanes through the chipset (NVMe drives installed directly to the motherboard) or directly through the PCIe x16 slots. In this case we chose the latter of the two, using a Gigabyte AORUS AIC with 4 x Corsair MP600 2TB gen4 NVMe SSDs for a total of 8Gb in RAID0, with speeds of up to 21 GB/s.v
+      </p>
+      <h2>Motherboard</h2>
+      <p>
+        Any sTRX4 compatible motherboard/chipset should work, and there are extensive reviews available online. You might want to go for a Threadripper Pro and its newer socket/chipset for a more expensive build, or a Ryzen compatible motherboard for a more inexpensive build. Most Threadripper motherboards that I’m aware of have 4 dual-channel memory lanes for up to 256 GB of RAM. Other motherboards have different spacing and number of PCIe lanes, but also could have different form factors so beware.
+      </p>
+      <h2>Case</h2>
+      <p>
+        I went with Gamers Nexus case reviews and concluded that in 2020-2021, the best available case for airflow at my budget was the Lian Li Lancool II Mesh, which has numerous airflow features. The case has a perforated front for airflow and modest particulate filtration, perforated bottom compartment access panels, and rear and top exhaust options with a dust filter on top.
+      </p>
+      <h2>Fans</h2>
+      <p>
+        There were 3 Lian Li RGB fans that came with the case, two of them are currently installed under the GPU and AIC blowing cool air upwards, which is exhausted by 3 Corsair ML120 120mm mag-lev fans at the rear and top of the case. The rest of the Corsair ML120s are installed on the front of the case directing air across the 360mm h250i radiator.
+      </p>
+      <h2>Operating System</h2>
+      <p>
+        I’ve chosen to stick with my operating system of choice: Arch Linux. I choose this above all others because of the richness of the Arch ecosystem via its extensive package management system, the Arch User Repository (AUR), and the richness of the Arch wiki. I have customized my operating system a little bit and I can say that my workflow basically boils down to Cinnamon for my DE, BSPWM for concentration mode, XFCE4 terminal + tmux for all my text editing, coding, server connections etc. For those of you who don’t know what any of that means, Arch is not a good beginner distribution of Linux. It’s a distribution that gives you an up-to-date kernel and libraries and lets you install only what you need when you need it. I think I’d recommend PopOS, Mint, or Xubuntu for most beginners while recognizing that it is difficult to mess something up completely in debian distros, their package management system is fairly mature.
+      </p>
+      <p>
+        Anyway for productivity I use <code class="code-pink">tmux</code> and <code class="code-pink">emacs</code> for the bulk of my workflow. I use <code class="code-pink">emacs</code> for text/code editing, and <code class="code-pink">tmux</code> to manage windows. It’s fairly old school, but it’s mature and way easier for me to be productive with at the moment than to learn something hip and completely customizable like <code class="code-pink">bspwm</code>. It also works nicely on most Linux servers. So I use org mode and markdown documents for note taking, markdown and Rmd for documentation, reproducibility, and reporting.
+      </p>
+      <p>
+        I use OBS for streaming and content creation, <code class="code-pink">cmus</code> and Spotify/spicetify for music players, I make use of <code class="code-pink">iwd</code> for managing networks with <code class="code-pink">systemd</code>. I use iptables for firewall, SQLite3/PostgreSQL for database needs, <code class="code-pink">yay</code> and <code class="code-pink">pacman</code> for package installation, <code class="code-pink">tmux</code> as mentioned before to manage shell sessions from within tabs on a XFCE4-terminal drop-down terminal with transparency enabled. This lets me read from documentation, stack-overflow, or slide examples when inputting code into my shell sessions.
+       </p>
+       <p>
+        I wrote a custom backup package called <code class="code-pink">curam</code> which is available through the AUR. It’s a configurable backup mechanism with internal/external storage devices that act as pseudo-backup (same machine, different drive) and on-site backup, and it’s coupled to an AWS backup step that uploads a tarball snapshot of the OS state onto a S3 bucket.
+       </p>
+       <p>
+        I use Chromium and Firefox as my browsers, Emacs as my generic text editor, and R+RStudio+LaTeX for editing Rmarkdown reports and preparing academic/professional reports.
+       </p>
+       <p>
+        For Python development I use jedi-mode in <code class="code-pink">emacs</code> in a tmux pane, with additional panes for the Python interpreter/REPL, git commands, and shell environments for testing on test datasets. I prefer to use vanilla pip instead of the conda environment, as early experiences with proper pip packages usually never fail to install, and I prefer to install other software directly through package management or through source code.
+       </p>
+       <p>
+        I prefer to use Gnome rather than KDE, plasma, or Qt desktop environment applications where possible, as this creates the most stable Arch system from my experience.
+       </p>
+       <h2>Data Science Workflow</h2>
+       <p>
+        The last aspect I would like to present to you is my vision for how I can handle larger and larger genomics and data science workloads. The first factor or variable in my capacity/throughput is the restriction of my computing needs to the Beowulf cluster at my institution. I’d like access to more and better hardware, but at this point the first step is demonstrating basics before getting tangled up with HPC.
+       </p>
+       <p>
+        So, my local development workflow for data science projects typically begins with an RStudio session for Rmarkdown, shell code documentation, and clean, crisp, literate programming. Then, I press Caps(Ctrl)+Alt+a to dropdown my XFCE4-terminal, fire up as many tabs in XFCE4 that I need, perhaps one for documentation/gh-pages/git, one for core python programming, matrix manipulations, accuracy benchmarking, performance profiling, and other tabs and <code class="code-pink">tmux</code> panes as needed.
+       </p>
+       <p>
+        In the future I will more than likely use Jupyter or Google Colab for a lot of my Python notebooks/literate programming, but for now I am sticking to a terminal centric way of doing software development.
+       </p>
+       <p>
+        I use GNU parallels for efficient OS-level parallelization and sometimes make use of Python’s <code class="code-pink">multiprocessing</code> library.
+       </p>
+</div>

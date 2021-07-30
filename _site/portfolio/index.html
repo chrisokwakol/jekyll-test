@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Portfolio - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <img id="header-bg" src="/assets/images/header1.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="//assets/images/header1.jpg" alt="" srcset=""> -->
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft">Portfolio</h1>
+        <h3 class="animated bounceInRight">Open for collaborations</h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    <div class="portfolio-text">
+    <h4>What is a digital portfolio?</h4>
+    <p>It isn’t simply a statement towards employers. A good digital portfolio illustrates diverse skills and complex systems in a clean, plain view for teammates to quickly understand experiences, tools, and interests. <br><br>
+
+        A current interest is having one or more successful open source projects under my belt, to have experience in collaborative coding. Secondly, I enjoy theoretical and performance assessments of my calculators in Rmd, to become a better analyst. Also, I have interests in citizen-science or science education projects including the PublicLab spectrophotometer and simple spectroscopy projects.</p>
+    <button><i class="fab fa-patreon fa-2x"></i>Become a Patreon</button>
+
+    <div id="digital-portfolio-cards">
+        <div class="portfolio-card-one">
+            <img id="kmers-img" src="/assets/images/portfolio/dna_wow.gif" alt="Avatar" style="width:100%">
+            <div class="container">
+                <div>
+                    <h4><b>K-mer.js</b></h4>
+                    <p id="main-kmer-js-paragraph">kmer.js is a k-mer library for NodeJS</p>
+                </div>
+                <div id="github-stats">
+                    <a href="https://github.com/MatthewRalston/kmer.js/stargazers" class="button is-white is-small">
+                        <img alt="GitHub stars" src="https://img.shields.io/github/stars/MatthewRalston/kmer.js?style=social">
+                    </a>
+                    <a href="https://github.com//network/members" class="button is-white is-small">
+                        <img alt="GitHub forks" src="https://img.shields.io/github/forks/MatthewRalston/kmer.js?style=social">
+                    </a>
+                    <a href="https://github.com/MatthewRalston/kmer.js/watchers" class="button is-white is-small">
+                        <img alt="GitHub watchers"
+                            src="https://img.shields.io/github/watchers/MatthewRalston/kmer.js?style=social">
+                    </a>
+                </div>
+                <div id="project-languages">
+                    <p>NodeJS</p>
+                    <p>Github</p>
+                    <p>Kmers</p>
+                </div>
+                <a id="view-kmer-project-btn" target="_blank" href="https://matthewralston.github.io/kmer.js/">
+                    View the K-mer.js Project on Github
+                </a>
+            </div>
+        </div>
+       
+        <div class="portfolio-card-two">
+            <img id="kmers-database-img" src="/assets/images/portfolio/genetic_engineering.gif" alt="Avatar" style="width:100%">
+            <div class="container">
+                <div>
+                    <h4><b>K-mer Database</b></h4>
+                    <p style="margin-bottom: 10px;">A clean and simple K-mer library for Python</p>
+                </div>
+                <div id="github-stats">
+                    <a href="https://github.com/MatthewRalston/kdb/stargazers" class="button is-white is-small">
+                        <img alt="GitHub stars" src="https://img.shields.io/github/stars/MatthewRalston/kdb?style=social">
+                    </a>
+                    <a href="https://github.com//network/members" class="button is-white is-small">
+                        <img alt="GitHub forks" src="https://img.shields.io/github/forks/MatthewRalston/kdb?style=social">
+                    </a>
+                    <a href="https://github.com/MatthewRalston/kdb/watchers" class="button is-white is-small">
+                        <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/MatthewRalston/kdb?style=social">
+                    </a>
+                </div>
+                <p id="main-kmer-database-paragraph">
+                    KDB is a Python library designed for bioinformatics applications. It addresses the <a href="https://en.wikipedia.org/wiki/K-mer">‘k-mer’ problem</a> (substrings of length k) in a simple and performant manner. It generates a k-mer spectrum/profile and stores the profile to the <code class="code-pink">.kdb</code> format spec, a bgzf file similar to BAM.
+                </p>
+                <div id="kmer-database-files-python">
+                    <p>bgzf file + index</p>
+                    <p>K-mer count histogram (4^k)</p>
+                    <p>Multiplexed inputs</p>
+                    <p>bgzf header block</p>
+                    <p>CLI and Python module</p>
+                </div>
+                <div id="project-languages">
+                    <p>Python</p>
+                    <p>Github</p>
+                    <p>Kmers</p>
+                </div>
+                <a id="view-kmer-project-btn" target="_blank" href="https://matthewralston.github.io/kmer.js/">
+                    View the K-mer.js Project on Github
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h4>Blogging</h4>
+    <p>
+        When I began blogging, I was looking for a way to supplement my portfolio with details of the qualitative kind: passion projects, social causes, current events, social interactions, conversational style, and interpersonal perspectives. It was also an opportunity to describe perspectives, demonstrate critical thinking and attention to details, and practice my rhetorical abilities to those who could advocate my positions or at the least, consider them.
+    </p>
+    <h4>What to add, and what not to.</h4>
+    <p>
+        The last element I wanted to emphasize in my digital footprint was what was left unstated by the combination of my open source portfolio, my website and blog, and my CV/resume. Employers looking for certain skills may view a lack of SQL code in the codebase as evidence of little practical experience, unless you emphasize it heavily in your CV. If you’re not that interested or educated in what database managers daily routines look like, then perhaps that’s a good reason to leave it out of your portfolio in a conceivable way.
+    </p>
+</div>
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>

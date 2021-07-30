@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Beginner Python Arrays - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <img id="header-bg" src="/assets/images/blog/code_syntax/feature.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="//assets/images/blog/code_syntax/feature.jpg" alt="" srcset=""> -->
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft">Beginner Array/List Methods</h1>
+        <h3 class="animated bounceInRight"></h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    <hr class="single-post-hr">
+<div class="about-author">
+    <div class="details">
+        <img src="/assets/images/blog/user.png" alt="" srcset="">
+        <div>
+            <h4>Matt Ralston</h4>
+            <span>14 Apr 2018</span> &nbsp;
+        </div>
+    </div>
+    <div class="icons">
+        <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+    </div>
+</div>
+
+<div class="single-post">
+
+    Tags:
+    
+    <!--  -->
+    <a href="/tag/beginner">beginner</nobr>&nbsp;</a>
+    
+    <!--  -->
+    <a href="/tag/python">python</nobr>&nbsp;</a>
+    
+    <!--  -->
+    <a href="/tag/ruby">ruby</nobr>&nbsp;</a>
+    
+    <!--  -->
+    <a href="/tag/haskell">haskell</nobr>&nbsp;</a>
+    
+    <!--  -->
+    <a href="/tag/javascript">javascript</nobr>&nbsp;</a>
+    
+    <!--  -->
+    <a href="/tag/r">r</nobr>&nbsp;</a>
+    
+
+    <div id="post">
+    <p>
+        Hello everyone! Today we'll be talking about essential array/list methods in different languages, reminding our readers of differences across languages. As beginner programmers, many of us are not aware of differences in the implementations of fundamental structures between languages. While we occasionally hear generalizations (<a href="http://attractivechaos.github.io/plb/">perl is faster than python for strings</a> etc.), benchmarking is more common among mature libraries/packages than standard library or primitive data structures.
+    </p>
+    <p>
+        An algorithm's cost depends on its data structures and their instance methods. For example, appending items, iterating, or performing normalizations on a list. As a beginner, I was not aware of the differences between lists, linked-lists, arrays, and hashmaps. Additionally, list/array methods perform differently in speed between languages and sometimes have multiple approaches (push, append, concat, extend, etc). Our first example in this tutorial will be about appending to a basic list/array. Skip ahead to Binary Search if you feel comfortable with this concept already.
+    </p>
+    <h2>Array/List Append</h2>
+    <p>
+        Some of these operations modify the structure in place (mutability) while some return a duplicated structure with the modifications.
+        Appending to an array is a basic operation that is fundamental to many basic computational operations and applications. It is important to understand that the plurality of arrays (or lists if you prefer) means that array methods are extremely common in our codebases. One such fundamental operation, the append, is essential for processing datasets and working iteratively. In early programming languages, the basic 'last in, first out' (LIFO) <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a> was typically a collection of integers (or other primitives) simply thrown into a collection for later use. Importantly, the most simple 'list', the stack may or may not have a limited capacity and subject to overflow limits. A principle difference between the '<a href="https://en.wikipedia.org/wiki/Array_data_structure">array</a>' and the <a href="https://en.wikipedia.org/wiki/Linked_list">linked-list</a> is the way the "next" element of the collection may be accessed. For the array, the next element is simply the next address in physical memory. The linked-list however, stores a pointer to the next element along with the current element.
+    </p>
+    <p>
+        Now let's think about access performance for the array or list. For example, if the memory addresses 2000-2256 referred to some data, then you could append (or prepend) to a stack by assigning a new integer to address 1998 with an array implementation such that the array pointer references 1998. In contrast, what if you needed to access the bottom of the stack, or the first element added to it (to determine array length, for example)? In this case, you'd need to traverse the length of the whole array to find where the array ends. The cost of this operation grows with the size of the array, N. Now imagine how expensive it would be to grow an array if the language's implementation (FIFO behaviour, I suppose) required appending to address 2258, then 2260, etc. Each append would make subsequent appends progressively expensive. This is not usually or always the case, but I include it to recommend users experiment with different data structures and methods to determine the best performance.
+    </p>
+
+    <table class="wikitable" id="wikiTable">
+        <caption>
+            <h4>Comparison of list data structures<sup class="reference"><a
+                        href="https://en.wikipedia.org/wiki/Array_data_structure">[wiki]</a></sup></h4>
+        </caption>
+        <tbody>
+            <tr>
+                <th></th>
+                <th><a href="https://en.wikipedia.org/wiki/Linked_list" title="Linked list">Linked list</a></th>
+                <th><a class="mw-selflink selflink">Array</a></th>
+                <th><a href="https://en.wikipedia.org/wiki/Dynamic_array" title="Dynamic array">Dynamic array</a></th>
+                <th><a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree"
+                        title="Self-balancing binary search tree">Balanced tree</a></th>
+                <th>Random access list</th>
+                <th><a href="https://en.wikipedia.org/wiki/Hashed_array_tree" title="Hashed array tree">Hashed array
+                        tree</a></th>
+            </tr>
+            <tr>
+                <td>Indexing</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+                <td style="background:#ddffdd">Θ(1)</td>
+                <td style="background:#ddffdd">Θ(1)</td>
+                <td style="background:#ffffdd">Θ(log n)</td>
+                <td style="background:#ffffdd">Θ(log n)<sup id="cite_ref-10" class="reference"><a
+                            href="https://en.wikipedia.org/wiki/Array_data_structure#cite_note-10">[10]</a></sup></td>
+                <td style="background:#ddffdd">Θ(1)</td>
+            </tr>
+            <tr>
+                <td><span class="nowrap">Insert/delete</span> at beginning</td>
+                <td style="background:#ddffdd">Θ(1)</td>
+                <td data-sort-value=""
+                    style="background: #ececec; color: #2C2C2C; vertical-align: middle; font-size: smaller; text-align: center;"
+                    class="table-na">N/A</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+                <td style="background:#ffffdd">Θ(log n)</td>
+                <td style="background:#ddffdd">Θ(1)</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+            </tr>
+            <tr>
+                <td><span class="nowrap">Insert/delete</span> at end</td>
+                <td style="background:#ddffdd">Θ(1) when last <span class="nowrap">element is known</span>;<br>
+                    Θ(<i>n</i>) when last <span class="nowrap">element is unknown</span></td>
+                <td data-sort-value=""
+                    style="background: #ececec; color: #2C2C2C; vertical-align: middle; font-size: smaller; text-align: center;"
+                    class="table-na">N/A</td>
+                <td style="background:#ddffdd">Θ(1) <a href="https://en.wikipedia.org/wiki/Amortized_analysis"
+                        title="Amortized analysis">amortized</a></td>
+                <td style="background:#ffffdd">Θ(log <i>n</i>)</td>
+                <td style="background:#ffffdd">Θ(log <i>n</i>) updating</td>
+                <td style="background:#ddffdd">Θ(1) <a href="http://en.wikipedia.org/wiki/Amortized_analysis"
+                        title="Amortized analysis">amortized</a></td>
+            </tr>
+            <tr>
+                <td><span class="nowrap">Insert/delete</span> in middle</td>
+                <td style="background:#ffffdd">search time + <span class="nowrap">Θ(1)</span><sup id="cite_ref-11"
+                        class="reference"><a
+                            href="https://en.wikipedia.org/wiki/Array_data_structure#cite_note-11">[11]</a></sup><sup
+                        id="cite_ref-12" class="reference"><a
+                            href="https://en.wikipedia.org/wiki/Array_data_structure#cite_note-12">[12]</a></sup><sup
+                        id="cite_ref-13" class="reference"><a
+                            href="https://en.wikipedia.org/wiki/Array_data_structure#cite_note-13">[13]</a></sup></td>
+                <td data-sort-value=""
+                    style="background: #ececec; color: #2C2C2C; vertical-align: middle; font-size: smaller; text-align: center;"
+                    class="table-na">N/A</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+                <td style="background:#ffffdd">Θ(log <i>n</i>)</td>
+                <td style="background:#ffffdd">Θ(log <i>n</i>) updating</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+            </tr>
+            <tr>
+                <td><span class="nowrap">Wasted space</span> (average)</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+                <td style="background:#ddffdd">0</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)<sup id="cite_ref-brodnik_14-0" class="reference"><a
+                            href="https://en.wikipedia.org/wiki/Array_data_structure#cite_note-brodnik-14">[14]</a></sup>
+                </td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+                <td style="background:#ffdddd">Θ(<i>n</i>)</td>
+                <td style="background:#ffffdd">Θ(<span class="nowrap">√<span
+                            style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span>)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Map, filter, reduce and higher-order functions</h2>
+    <blockquote>
+        Map takes a function and a list and applies that function to every element in the list, producing a new list.
+    </blockquote>
+    <p>
+        Map, filter, and reduce are simple higher-order functions that are often not taught in tutorials. Novice programmers may make the mistake of using a for loop to increment through a csv to perform mutation/selection of certain lines. Unfortunately, imperative/procedural style tends to teach students that data comes from the state/position of your location in the file, rather than a holistic view of data as resulting from discrete/piecewise transformations on an input set. I'm not going to start talking about monads and why learning abstract algebra is going to transform your code, but I will say that higher-order functions help you think about making code modular, simple, and readable to understand the transforms and aggregations of your data. Higher-order functions behave just like normal functions, but they can use and/or return anonymous functions, allowing more complex operations to be created. Think of how hard filtering a list would be if you had to write your own filtering function for each different criterion. Instead, higher-order functions allow us to simply provide a conditional, or a boolean-returning lambda/callback/anonymous function. As you can see from the examples below, there are few to no alternatives and thus benchmarking is not an issue within a language.
+    </p>
+    <h2>Map in various languages</h2>
+    <p>
+        Map is a simple function or array method that applies a transformation to data in an iterable, array, or list format. Interestingly, some languages or environments have lazy and/or parallel versions of the map function, providing a condiderable speedup over a procedural for-loop. Simple functions are usually declared anonymously or through a lambda convention and are tightly coupled to the transformation. Maps can often be chained with filter steps and additional mapped transformations. For example, you could read lines of a csv into an array, map to the third column, convert the type to float, round to 2 decimal places and assign that to a variable. Then you could map a median normalization across the array, before calculating aggregate stats or generating a histogram. Objectively, the functional method is easier to read and interpret.
+    </p>
+    <h2>Binary Search</h2>
+    <p>
+        Searching for an element in an array is a common task in algorithms and it appears more often than you may think. For example, the common conditional 'if varname in listname:' uses a linear search to find an element in an array. In Python, 'in' is an infix style of '__contains__' and is a linear search. If you're running the 'in' command on an unsorted list for each of 1M records, you can see how non-optimal detection of presence/abscence could heavily impact performance of your script. So what *should* a programmer use?
+    </p>
+    <p>
+        There are many different search algorithms that work on 1D or 2D structures. Of course the simplest method in 2018 may be to use a hashmap based data structure for direct access. However, the 1D binary search algorithm is illustrated below. In this diagram, the search is for the element '27'. The algorithm begins by bisecting the array such that 21 is compared to 27. As the desired element is larger than the element in the middle of the sorted array, the algorithm then bisects the upper half of the array, recursing until it locates the element 27. Also note that a linear search (shown on the bottom) takes a larger number on average than the binary search to locate an item in the array.
+    </p>
+</div>
+    
+    <a href="https://www.patreon.com/TheWaterAndWind">
+        <button style="margin-top: 40px; margin-bottom: 40px;"><i class="fab fa-patreon fa-2x"></i>&nbsp;&nbsp;Become a Patreon</button>
+    </a>
+    <div style="margin-top: 20px;">
+        
+            <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    
+    var disqus_config = function () {
+    this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://matthewralston.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+    </div>
+</div>
+
+
+
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>

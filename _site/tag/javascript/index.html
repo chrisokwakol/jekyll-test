@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>javascript - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <img id="header-bg" src="" alt="" srcset="">
+    <!-- <img id="header-bg" src="/" alt="" srcset=""> -->
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft"></h1>
+        <h3 class="animated bounceInRight"></h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    
+
+<section id="posts-with-tag">
+    <h1 id="posts-with-tag-title">Posts tagged with "javascript"</h1>
+  <ul>
+    
+      <li id="posts-with-tag-info">
+          <h4><a href="/2018/04/14/beginner-python-arrays/">Beginner Python Arrays</a></h4>
+          <div id="posts-with-tag-info-meta">
+              <p>Matt Ralston</p> &nbsp; &nbsp;
+              <span style="font-weight: 300;">14 Apr 2018</span>
+          </div>
+          <p style="margin-bottom: 20px;">Hello everyone! Today we'll be talking about essential array/list methods in different languages, reminding our readers of differences across languages. As beginner programmers, many of us are not aware of differences in the implementations of fundamental structures between languages. While we occasionally hear generalizations (perl is faster than python for strings etc.), benchmarking is more common among mature libraries/packages than standard library or primitive data structures. An algorithm's cost depends on its data structures and their instance methods. For example,...</p>
+          <a style="display: block; margin-bottom: 30px;" href="/2018/04/14/beginner-python-arrays/">Read article <i class="fas fa-angle-double-right"></i></a>
+      </li>
+    
+  </ul>
+</section>
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>

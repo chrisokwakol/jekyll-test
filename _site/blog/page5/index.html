@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Blog - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <img id="header-bg" src="/assets/images/header.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="//assets/images/header.jpg" alt="" srcset=""> -->
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft">Not Very Humerus</h1>
+        <h3 class="animated bounceInRight">Open-source bioinformatics blog</h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    <!-- This loops through the paginated posts -->
+<div class="blog-page-section">
+    <div class="blog-posts-main">
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/code_syntax/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4></h4>
+                <h2><a href="/2018/03/20/thoughts-on-sphinx/">Thoughts On Sphinx</a></h2>
+                <!-- pythonsphinx -->
+                <div class="date-author">
+                    <span>20 Mar 2018</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I’ve been exploring the Python documentation system for ReadTheDocs with Sphinx. It could be that I’m dense, but the sphinx-quickstart command seems horribly divorced from most of the automagic documentation goals of the Sphinx project. After following several guides1, 2 I noticed that only an index.rst had been created in...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/code_syntax/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4></h4>
+                <h2><a href="/2018/04/14/beginner-python-arrays/">Beginner Python Arrays</a></h2>
+                <!-- beginnerpythonrubyhaskelljavascriptr -->
+                <div class="date-author">
+                    <span>14 Apr 2018</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Hello everyone! Today we'll be talking about essential array/list methods in different languages, reminding our readers of differences across languages. As beginner programmers, many of us are not aware of differences in the implementations of fundamental structures between languages. While we occasionally hear generalizations (perl is faster than python for...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/code_syntax/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4></h4>
+                <h2><a href="/2018/04/16/nebula-network/">Nebula Network</a></h2>
+                <!-- appprosemetarant -->
+                <div class="date-author">
+                    <span>16 Apr 2018</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Hi everyone, have you ever wondered what would be a good idea for an app? Since I became a developer, now I have *some* of the tools to potentially create some basic web applications, command line tools, etc. For some developers who aren't creating regularly, it may seem like your...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/code_syntax/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4></h4>
+                <h2><a href="/2018/06/28/open-source-hypocrisy/">Open Source Hypocrisy</a></h2>
+                <!-- metafossprosemethodologyrant -->
+                <div class="date-author">
+                    <span>28 Jun 2018</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">See the great thing about science and technology jobs is our transparency and focus on the problem, not on the finance. You could say that the tech sector is very scientific and rational. You see, we rationalize taking advantage of liberally licensed software. We value open source software because... it...</p>
+            </div>
+        </div>
+        
+
+        <!-- Pagination links -->
+        
+        <div class="pagination">
+        
+            <a href="/blog/page4/"><i class="fas fa-chevron-left"></i> PREV</a>
+        
+
+        
+            
+            <a id="pagination-num" href="/blog/">1</a>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page2/">2</a>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page3/">3</a>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page4/">4</a>
+            
+        
+            
+            <em>5</em>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page6/">6</a>
+            
+        
+
+        
+            <a href="/blog/page6/">Next &raquo;</a>
+        
+        </div>
+        
+    </div> 
+
+    <!-- RECENT POSTS -->
+    <div class="blog-posts-sidebar">
+        <h2 class="recent-posts-title">Recent posts</h2>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/workstation/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Coding</h4>
+                <h3><a href="/coding/2021/04/22/data-science-workstation-build/">Data Science Workstation Build</a></h3>
+                <div class="date-author">
+                    <span>22 Apr 2021</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school. We begin with a look...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/bio-informatician/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Science</h4>
+                <h3><a href="/science/2020/09/05/how-do-i-become-a-bioinformatician/">How Do I Become A Bioinformatician</a></h3>
+                <div class="date-author">
+                    <span>05 Sep 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I see plenty of posts on /r/bioinformatics of students or mid-career professionals asking what it takes to become a bioinformatician. What skills should I have?...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/sorting-python/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Coding</h4>
+                <h3><a href="/coding/2020/02/26/sorting-out-modules-in-python/">Sorting Out Modules In Python</a></h3>
+                <div class="date-author">
+                    <span>26 Feb 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Oh yeah, it’s all coming together If you’re comfortable with the differences between dictionaries and modules, skip ahead to the section about modules where I...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/Differentiation_in_Computational_Research_Environments/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Science</h4>
+                <h3><a href="/science/2020/02/16/data-engineers-vs-data-scientists/">Data Engineers Vs Data Scientists</a></h3>
+                <div class="date-author">
+                    <span>16 Feb 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Introduction Big data is a meme, but there is a dichotomy worth discussing in the emerging interdisciplinary fields involving computer science. There is a choice...</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>

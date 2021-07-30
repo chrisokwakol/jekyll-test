@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>New Site Design - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <img id="header-bg" src="/assets/images/blog/new_site_design/feature.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="//assets/images/blog/new_site_design/feature.jpg" alt="" srcset=""> -->
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft">Site Redesign</h1>
+        <h3 class="animated bounceInRight">Chris Rhymes - Bulma Clean</h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    <hr class="single-post-hr">
+<div class="about-author">
+    <div class="details">
+        <img src="/assets/images/blog/user.png" alt="" srcset="">
+        <div>
+            <h4>Matt Ralston</h4>
+            <span>12 Feb 2020</span> &nbsp;
+        </div>
+    </div>
+    <div class="icons">
+        <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+    </div>
+</div>
+
+<div class="single-post">
+
+    Tags:
+    
+
+    <div id="post">
+    <h4>Welcome!</h4>
+    <p>
+        Welcome to the new website, I’ve recently merged my blog Not Very Humerus with my <a href="http://matthewralston.github.io/">static homepage</a>. The point of this blog post is to introduce the reader to my experience theming with Jekyll and specifically the Bulma clean theme.
+    </p>
+    <p>
+        The best part of re-theming was the essential plug-and-play experience of copying my blog’s <code class="code-pink">_post</code> directory into the Jekyll theme and watching the site automatically populate with my blog’s content.
+    </p>
+    <p>
+        The biggest challenge was wrestling with the site’s <code class="code-pink">site.baseurl</code> and <code class="code-pink">site.url</code> in generating working links throughout. I’m not sure if that was a bug that was truly mine, but it seemed like the raw theme didn’t quite have the same problems. The problem started when I was changing the site.url to my localhost and eliminating <code class="code-pink">site.baseurl</code> in anticipation of the deployment to my primary Github static page.
+    </p>
+    <p>
+        Aside from fixing some broken links in the blog’s pagination, the purpose of exploring the possibilities by resetting <code class="code-pink">site.baseurl</code> was to simply get my meme popovers working again! After making the necessary adjustments, all of the memes display correctly on the site.
+    </p>
+    <p>
+        The short term goal for the website is to simplify the sites maintenance and deployment needs. To this end, I was looking at 2 or 3 themes for the site redesign, with bulma-clean and prologue being the two forerunners. At the time, I liked the idea of the prologue theme’s contact form using formspree.io but I couldn’t ignore the flexibility in templating offered by bulma-clean. After copying the contact form, I elected to go for the older template instead of the very responsive HTML5 design in prologue.
+    </p>
+    <p>
+        In the long term, I’d like to add a few applications and perhaps a more permanent solution to the contact page when I deploy the website to a dedicated server. But until that time, I’m very happy with the appearance and functionality of the site and its sections.
+    </p>
+</div>
+    
+    <a href="https://www.patreon.com/TheWaterAndWind">
+        <button style="margin-top: 40px; margin-bottom: 40px;"><i class="fab fa-patreon fa-2x"></i>&nbsp;&nbsp;Become a Patreon</button>
+    </a>
+    <div style="margin-top: 20px;">
+        
+            <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    
+    var disqus_config = function () {
+    this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://matthewralston.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+    </div>
+</div>
+
+
+
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>

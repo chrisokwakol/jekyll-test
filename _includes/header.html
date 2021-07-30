@@ -1,19 +1,20 @@
 <!-- HEADER -->
-<header> 
-    <!-- <img id="header-bg" src="{{ page.header-image }}" alt="" srcset=""> -->
-    <img id="header-bg" src="{{ site.baseurl }}/{{ page.header-image }}" alt="" srcset="">
+<header>  
+    <img id="header-bg" src="{{ page.header-image }}" alt="" srcset="">
+    <!-- <img id="header-bg" src="{{ site.baseurl }}/{{ page.header-image }}" alt="" srcset=""> -->
     <nav>
         <div class="logo">
-            <a href="{{ site.baseurl }}/index.html"><h2 style="color: white;">Matt Ralston</h2></a>
+            <a href="{{ site.baseurl }}/index"><h2 style="color: white;">Matt Ralston</h2></a>
         </div>
-        <div class="nav-menu">
+        <div class="nav-menu"> 
             <ul>
-                <li><a href="{{ site.baseurl }}/index.html">Home</a></li>
-                <li><a href="{{ site.baseurl }}/about.html">About</a></li>
-                <li><a href="{{ site.baseurl }}/portfolio.html">Portfolio</a></li>
-                <li><a href="{{ site.baseurl }}/cv.html">C.V</a></li>
-                <li><a href="{{ site.baseurl }}/blog.html">Blog</a></li>
-                <li><a href="{{ site.baseurl }}/contact.html"><button>Contact</button></a></li>
+                <li><a href="{{ site.baseurl }}/index">Home</a></li>
+                <li><a href="{{ site.baseurl }}/about">About</a></li>
+                <li><a href="{{ site.baseurl }}/portfolio">Portfolio</a></li>
+                <li><a href="{{ site.baseurl }}/cv">C.V</a></li>
+                <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="{{ site.baseurl }}/contact"><button>Contact</button></a></li>
             </ul>
         </div>
         <div id="open-mobile-nav" onclick="openNav()">
@@ -21,24 +22,25 @@
             <span></span>
             <span></span>
         </div>
-        <!-- MOBILE NAV -->
-        <div id="mobile-nav-overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div id="mobile-nav-overlay-content">
-                <a href="{{ site.baseurl }}/index.html">Home</a>
-                <a href="{{ site.baseurl }}/about.html">About</a>
-                <a href="{{ site.baseurl }}/portfolio.html">Portfolio</a>
-                <a href="{{ site.baseurl }}/cv.html">C.V</a>
-                <a href="{{ site.baseurl }}/blog.html">Blog</a>
-                <a href="{{ site.baseurl }}/contact.html">Contact</a>
-            </div>
-        </div>
     </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="{{ site.baseurl }}/index">Home</a>
+            <a href="{{ site.baseurl }}/about">About</a>
+            <a href="{{ site.baseurl }}/portfolio">Portfolio</a>
+            <a href="{{ site.baseurl }}/cv">C.V</a>
+            <a href="{{ site.baseurl }}/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="{{ site.baseurl }}/contact">Contact</a>
+        </div>
+    </div>
 
     <!-- Hero text -->
     <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
-        <h1 class="animated rotateInDownRight">{{ page.hero-title }}</h1>
-        <h3 class="animated rotateInDownLeft">{{ page.hero-subtitle }}</h3>
+        <h1 class="animated bounceInLeft">{{ page.hero-title }}</h1>
+        <h3 class="animated bounceInRight">{{ page.hero-subtitle }}</h3>
         <div class="animated bounceIn hero-icons">
             <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
             <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
@@ -49,3 +51,4 @@
         </div>
     </div>
 </header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->

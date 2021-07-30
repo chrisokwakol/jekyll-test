@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Blog - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
+    <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body> 
+    <!-- HEADER -->
+<header>  
+    <img id="header-bg" src="/assets/images/header.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="//assets/images/header.jpg" alt="" srcset=""> -->
+    <nav>
+        <div class="logo">
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
+        </div>
+        <div class="nav-menu"> 
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
+            </ul>
+        </div>
+        <div id="open-mobile-nav" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
+        <h1 class="animated bounceInLeft">Not Very Humerus</h1>
+        <h3 class="animated bounceInRight">Open-source bioinformatics blog</h3>
+        <div class="animated bounceIn hero-icons">
+            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+        </div>
+    </div>
+</header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
+
+      
+    <!-- This loops through the paginated posts -->
+<div class="blog-page-section">
+    <div class="blog-posts-main">
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/magica/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Fan fiction</h4>
+                <h2><a href="/fan%20fiction/2019/09/08/magika-a-sword-art-fanfiction/">Magika A Sword Art Fanfiction</a></h2>
+                <!--  -->
+                <div class="date-author">
+                    <span>08 Sep 2019</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Officially, magic was a forbidden component of Sword Art. Magical skills, item stats, criticals, and ability leveling may have elements beyond the typical diagnostic expertise of the players. Yet, enchanted items, durability, and other components of the material realm of Sword Art have mechanics of randomness, high-level crafting, beyond the...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/Domestic_Egalitarianism/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>MISC</h4>
+                <h2><a href="/misc/2019/10/23/second-shift-domestic-egalitarianism/">Second Shift Domestic Egalitarianism</a></h2>
+                <!--  -->
+                <div class="date-author">
+                    <span>23 Oct 2019</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Review notes These are some notes I jotted down while reading a study from Psychological Science linked by /r/science Reddit at 2.3k updoots. This article had a somewhat clearer design and premise than a more popular post (8.8k currently) this morning in the same subreddit. PDF to the former article...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/new_site_design/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>MISC.</h4>
+                <h2><a href="/misc2020/02/12/new-site-design/">New Site Design</a></h2>
+                <!--  -->
+                <div class="date-author">
+                    <span>12 Feb 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Welcome! Welcome to the new website, I’ve recently merged my blog Not Very Humerus with my static homepage. The point of this blog post is to introduce the reader to my experience theming with Jekyll and specifically the Bulma clean theme. The best part of re-theming was the essential plug-and-play...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/code_syntax/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4></h4>
+                <h2><a href="/2020/02/16/benchmarking-python-clis/">Benchmarking Python Clis</a></h2>
+                <!--  -->
+                <div class="date-author">
+                    <span>16 Feb 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">What is benchmarking and why do it? Benchmarking your codebase can be a daunting challenge. If you’re like me, you tend to build large monolithic scripts, occassionally a poorly planned module, and testing suite towards the end of the development process. To add to the challenge, optimization is the root...</p>
+            </div>
+        </div>
+        
+
+        <!-- Pagination links -->
+        
+        <div class="pagination">
+        
+            <a href="/blog/"><i class="fas fa-chevron-left"></i> PREV</a>
+        
+
+        
+            
+            <a id="pagination-num" href="/blog/">1</a>
+            
+        
+            
+            <em>2</em>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page3/">3</a>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page4/">4</a>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page5/">5</a>
+            
+        
+            
+            <a id="pagination-num" href="/blog/page6/">6</a>
+            
+        
+
+        
+            <a href="/blog/page3/">Next &raquo;</a>
+        
+        </div>
+        
+    </div> 
+
+    <!-- RECENT POSTS -->
+    <div class="blog-posts-sidebar">
+        <h2 class="recent-posts-title">Recent posts</h2>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/workstation/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Coding</h4>
+                <h3><a href="/coding/2021/04/22/data-science-workstation-build/">Data Science Workstation Build</a></h3>
+                <div class="date-author">
+                    <span>22 Apr 2021</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school. We begin with a look...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/bio-informatician/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Science</h4>
+                <h3><a href="/science/2020/09/05/how-do-i-become-a-bioinformatician/">How Do I Become A Bioinformatician</a></h3>
+                <div class="date-author">
+                    <span>05 Sep 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">I see plenty of posts on /r/bioinformatics of students or mid-career professionals asking what it takes to become a bioinformatician. What skills should I have?...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/sorting-python/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Coding</h4>
+                <h3><a href="/coding/2020/02/26/sorting-out-modules-in-python/">Sorting Out Modules In Python</a></h3>
+                <div class="date-author">
+                    <span>26 Feb 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Oh yeah, it’s all coming together If you’re comfortable with the differences between dictionaries and modules, skip ahead to the section about modules where I...</p>
+            </div>
+        </div>
+        
+        <div class="blog-post">
+            <img src="/assets/images/blog/Differentiation_in_Computational_Research_Environments/feature.jpg" alt="" srcset="">
+            <div class="blog-content">
+                <h4>Science</h4>
+                <h3><a href="/science/2020/02/16/data-engineers-vs-data-scientists/">Data Engineers Vs Data Scientists</a></h3>
+                <div class="date-author">
+                    <span>16 Feb 2020</span> &nbsp;
+                    <span>By</span>
+                    <span>Matt Ralston</span>
+                </div>
+                <p class="blog-content-excerpt">Introduction Big data is a meme, but there is a dichotomy worth discussing in the emerging interdisciplinary fields involving computer science. There is a choice...</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="links">
+            <div class="footer-logo">
+                <a href="/index.html"><h3>Matt Ralston</h3></a>
+            </div>
+            <div class="footer-quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/cv.html">C.V</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Other Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
+            <div class="footer-icons">
+                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
+                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script> 
+  </body>
+</html>

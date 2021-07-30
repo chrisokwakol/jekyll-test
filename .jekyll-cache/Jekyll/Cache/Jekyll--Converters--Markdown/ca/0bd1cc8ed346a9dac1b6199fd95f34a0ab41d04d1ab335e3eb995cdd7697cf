@@ -1,0 +1,22 @@
+I"�<div id="post">
+    <h4>Welcome!</h4>
+    <p>
+        Welcome to the new website, I’ve recently merged my blog Not Very Humerus with my <a href="http://matthewralston.github.io/">static homepage</a>. The point of this blog post is to introduce the reader to my experience theming with Jekyll and specifically the Bulma clean theme.
+    </p>
+    <p>
+        The best part of re-theming was the essential plug-and-play experience of copying my blog’s <code class="code-pink">_post</code> directory into the Jekyll theme and watching the site automatically populate with my blog’s content.
+    </p>
+    <p>
+        The biggest challenge was wrestling with the site’s <code class="code-pink">site.baseurl</code> and <code class="code-pink">site.url</code> in generating working links throughout. I’m not sure if that was a bug that was truly mine, but it seemed like the raw theme didn’t quite have the same problems. The problem started when I was changing the site.url to my localhost and eliminating <code class="code-pink">site.baseurl</code> in anticipation of the deployment to my primary Github static page.
+    </p>
+    <p>
+        Aside from fixing some broken links in the blog’s pagination, the purpose of exploring the possibilities by resetting <code class="code-pink">site.baseurl</code> was to simply get my meme popovers working again! After making the necessary adjustments, all of the memes display correctly on the site.
+    </p>
+    <p>
+        The short term goal for the website is to simplify the sites maintenance and deployment needs. To this end, I was looking at 2 or 3 themes for the site redesign, with bulma-clean and prologue being the two forerunners. At the time, I liked the idea of the prologue theme’s contact form using formspree.io but I couldn’t ignore the flexibility in templating offered by bulma-clean. After copying the contact form, I elected to go for the older template instead of the very responsive HTML5 design in prologue.
+    </p>
+    <p>
+        In the long term, I’d like to add a few applications and perhaps a more permanent solution to the contact page when I deploy the website to a dedicated server. But until that time, I’m very happy with the appearance and functionality of the site and its sections.
+    </p>
+</div>
+:ET

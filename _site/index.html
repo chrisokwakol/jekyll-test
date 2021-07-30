@@ -4,27 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Home - Matt Ralston</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/animations.css">
+    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
     <script src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+
+  <body> 
     <!-- HEADER -->
-<header> 
-    <!-- <img id="header-bg" src="/assets/images/header3.jpg" alt="" srcset=""> -->
-    <img id="header-bg" src="//assets/images/header3.jpg" alt="" srcset="">
+<header>  
+    <img id="header-bg" src="/assets/images/header3.jpg" alt="" srcset="">
+    <!-- <img id="header-bg" src="//assets/images/header3.jpg" alt="" srcset=""> -->
     <nav>
         <div class="logo">
-            <a href="/index.html"><h2 style="color: white;">Matt Ralston</h2></a>
+            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
         </div>
-        <div class="nav-menu">
+        <div class="nav-menu"> 
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/cv.html">C.V</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/contact.html"><button>Contact</button></a></li>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/cv">C.V</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
+                <li><a href="/contact"><button>Contact</button></a></li>
             </ul>
         </div>
         <div id="open-mobile-nav" onclick="openNav()">
@@ -32,24 +36,25 @@
             <span></span>
             <span></span>
         </div>
-        <!-- MOBILE NAV -->
-        <div id="mobile-nav-overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div id="mobile-nav-overlay-content">
-                <a href="/index.html">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/portfolio.html">Portfolio</a>
-                <a href="/cv.html">C.V</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/contact.html">Contact</a>
-            </div>
-        </div>
     </nav>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="mobile-nav-overlay-content">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/cv">C.V</a>
+            <a href="/blog">Blog</a>
+            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
 
     <!-- Hero text -->
     <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
-        <h1 class="animated rotateInDownRight">Matt Ralston</h1>
-        <h3 class="animated rotateInDownLeft">Bioinformatician | Gamer | Powerlifter</h3>
+        <h1 class="animated bounceInLeft">Matt Ralston</h1>
+        <h3 class="animated bounceInRight">Bioinformatician | Gamer | Powerlifter</h3>
         <div class="animated bounceIn hero-icons">
             <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
             <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
@@ -60,8 +65,9 @@
         </div>
     </div>
 </header>
+<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
 
-     
+      
     <!-- BELOW HEADER -->
 <div class="below-header animatedParent animateOnce" data-appear-top-offset='-100' data-sequence='500'>
 
@@ -277,38 +283,61 @@
     <div class="blog-posts">
         
         <div class="blog-post one">
-            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4 class="animated bounceInRight">Bananas</h4>
+            <a href="/coding/2021/04/22/data-science-workstation-build/">
+                <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            </a>
+            <h2 class="animated bounceInRight"><a href="/coding/2021/04/22/data-science-workstation-build/">Data Science Workstation Build</a></h2>
+            <small>22 Apr 2021</small>
+            <hr 
+                style="height: 4px; max-width: 70px; text-align: start; background-color: #2A72ED; margin-top: 10px; margin-bottom: 10px;"
+            >
             <p class="animated bounceInRight"> 
-                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
+                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school....
             </p>
         </div>
         
-
-        <!-- <div class="blog-post two">
-            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4 class="animated bounceInRight">What workstation do I need for graduate school?</h4>
-            <p class="animated bounceInRight">
-                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
-            </p>
-        </div>
-
-        <div class="blog-post three">
-            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4 class="animated bounceInRight">What workstation do I need for graduate school?</h4>
-            <p class="animated bounceInRight">
-                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
+        <div class="blog-post one">
+            <a href="/science/2020/09/05/how-do-i-become-a-bioinformatician/">
+                <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            </a>
+            <h2 class="animated bounceInRight"><a href="/science/2020/09/05/how-do-i-become-a-bioinformatician/">How Do I Become A Bioinformatician</a></h2>
+            <small>05 Sep 2020</small>
+            <hr 
+                style="height: 4px; max-width: 70px; text-align: start; background-color: #2A72ED; margin-top: 10px; margin-bottom: 10px;"
+            >
+            <p class="animated bounceInRight"> 
+                I see plenty of posts on /r/bioinformatics of students or mid-career professionals asking what it takes to become a bioinformatician....
             </p>
         </div>
         
-        <div class="blog-post four">
-            <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
-            <h4 class="animated bounceInRight">What workstation do I need for graduate school?</h4>
-            <p class="animated bounceInRight">
-                In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school.
+        <div class="blog-post one">
+            <a href="/coding/2020/02/26/sorting-out-modules-in-python/">
+                <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            </a>
+            <h2 class="animated bounceInRight"><a href="/coding/2020/02/26/sorting-out-modules-in-python/">Sorting Out Modules In Python</a></h2>
+            <small>26 Feb 2020</small>
+            <hr 
+                style="height: 4px; max-width: 70px; text-align: start; background-color: #2A72ED; margin-top: 10px; margin-bottom: 10px;"
+            >
+            <p class="animated bounceInRight"> 
+                Oh yeah, it’s all coming together If you’re comfortable with the differences between dictionaries and modules, skip ahead to the...
             </p>
-        </div> -->
-
+        </div>
+        
+        <div class="blog-post one">
+            <a href="/science/2020/02/16/data-engineers-vs-data-scientists/">
+                <img class="animated bounceInLeft" src="/assets/images/workstation.jpg" alt="" srcset="">
+            </a>
+            <h2 class="animated bounceInRight"><a href="/science/2020/02/16/data-engineers-vs-data-scientists/">Data Engineers Vs Data Scientists</a></h2>
+            <small>16 Feb 2020</small>
+            <hr 
+                style="height: 4px; max-width: 70px; text-align: start; background-color: #2A72ED; margin-top: 10px; margin-bottom: 10px;"
+            >
+            <p class="animated bounceInRight"> 
+                Introduction Big data is a meme, but there is a dichotomy worth discussing in the emerging interdisciplinary fields involving computer...
+            </p>
+        </div>
+        
     </div>
 </div>
 
@@ -336,6 +365,7 @@
                 <ul class="footer-links">
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
                 </ul>
             </div>
         </div>
