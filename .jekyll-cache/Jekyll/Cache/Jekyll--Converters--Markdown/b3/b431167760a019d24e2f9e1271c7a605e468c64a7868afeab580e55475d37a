@@ -1,104 +1,8 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Sorting Out Modules In Python - Matt Ralston</title>
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
-    <!-- <link rel="stylesheet" href="/assets/css/animations.css"> -->
-    <link rel="stylesheet" href="/assets/css/animations.css" type="text/css">
-    <script async src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
-  </head>
-
-  <body> 
-    <!-- HEADER -->
-<header>  
-    <!-- <img id="header-bg" src="/assets/images/blog/sorting-python/feature.jpg" alt="" srcset=""> -->
-    <img id="header-bg" src="//assets/images/blog/sorting-python/feature.jpg" alt="" srcset="">
-    <nav>
-        <div class="logo">
-            <a href="/index"><h2 style="color: white;">Matt Ralston</h2></a>
-        </div>
-        <div class="nav-menu"> 
-            <ul>
-                <li><a href="/index">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/cv">C.V</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
-                <li><a href="/contact"><button>Contact</button></a></li>
-            </ul>
-        </div>
-        <div id="open-mobile-nav" onclick="openNav()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-    <!-- MOBILE NAV -->
-    <div id="mobile-nav-overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div id="mobile-nav-overlay-content">
-            <a href="/index">Home</a>
-            <a href="/about">About</a>
-            <a href="/portfolio">Portfolio</a>
-            <a href="/cv">C.V</a>
-            <a href="/blog">Blog</a>
-            <a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a>
-            <a href="/contact">Contact</a>
-        </div>
-    </div>
-
-    <!-- Hero text -->
-    <div class="hero-text animatedParent animateOnce" data-appear-top-offset='-100'>
-        <h1 class="animated bounceInLeft">Sorting Out Modules in Python</h1>
-        <h3 class="animated bounceInRight"></h3>
-        <div class="animated bounceIn hero-icons">
-            <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
-            <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
-            <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-            <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-            <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
-        </div>
-    </div>
-</header>
-<!-- <i onclick="topFunction()" id="backToTop" class="fas fa-arrow-alt-circle-up fa-3x"></i> -->
-
-      
-    <hr class="single-post-hr">
-<div class="about-author">
-    <div class="details">
-        <img src="/assets/images/blog/user.png" alt="" srcset="">
-        <div>
-            <h4>Matt Ralston</h4>
-            <span>26 Feb 2020</span> &nbsp;
-        </div>
-    </div>
-    <div class="icons">
-        <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-        <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
-    </div>
-</div>
-
-<div class="single-post">
-
-    Tags:
-    
-    <a href="/tag/python">python</nobr>&nbsp;</a>
-    
-    <a href="/tag/beginner">beginner</nobr>&nbsp;</a>
-    
-    <a href="/tag/noob">noob</nobr>&nbsp;</a>
-    
-
-    <div id="post">
-    <video autoplay style="display: block; width: 80%; height: 80%; margin: 20px auto;" controls>
-        <source src="https://thumbs.gfycat.com/OfficialFlatAnnelida-mobile.mp4" type="video/mp4">
-        <source src="https://giant.gfycat.com/OfficialFlatAnnelida.mp4" type="video/mp4">
-        <source src="https://thumbs.gfycat.com/OfficialFlatAnnelida-mobile.mp4" type="video/mp4">
+I"�5<div id="post">
+    <video autoplay="" style="display: block; width: 100%; height: 100%; margin: 20px auto;" controls="">
+        <source src="https://thumbs.gfycat.com/OfficialFlatAnnelida-mobile.mp4" type="video/mp4" />
+        <source src="https://giant.gfycat.com/OfficialFlatAnnelida.mp4" type="video/mp4" />
+        <source src="https://thumbs.gfycat.com/OfficialFlatAnnelida-mobile.mp4" type="video/mp4" />
     </video>
     <h2>Oh yeah, it’s all coming together</h2>
     <p>
@@ -108,9 +12,7 @@
     <p>
         Imagine a magical backpack that can store as much information as you can fit in memory. The one rule of using the magic backpack, is that <b>each time you need a new pocket or location to store something in it, you have to give the backpack a name</b> to reference the new information with.
     </p>
-    <div>
-        <img src="/assets/images/blog/sorting-python/dictionaries_python.png" alt="" srcset="">
-    </div>
+    <img src="/assets/images/blog/sorting-python/dictionaries_python.png" alt="" srcset="" />
     <h2>Issues with Nesting</h2>
     <p>
         Forgetting the name, or a <code class="code-pink">KeyError</code>, is a common error for beginners to struggle with. To minimize the number of KeyErrors, it is common to store the key in a variable or list for convenient access (imagine reading a table’s column headers with <code class="code-pink">.readline()</code>).
@@ -118,7 +20,7 @@
     <p>
         Another cause of the <code class="code-pink">KeyError</code> is a complex nested structure of lists and dictionaries with a complex accessing strategy. To DRY up your code a little, a lambda expression might be the right tool to access your buried data!
     </p>
-    <img src="/assets/images/blog/sorting-python/lambda.png" alt="" srcset="">
+    <img src="/assets/images/blog/sorting-python/lambda.png" alt="" srcset="" />
     <p>
         Remember that even though the <code class="code-pink">KeyError</code> may be simple to resolve, discovering an error is the expensive part, it’s not just about how extreme or how deleterious the error might seem (like with respect to closed threads/processes/connections).
     </p>
@@ -157,7 +59,7 @@
     <p>
         Okay, so let’s take the BioPython module <code class="code-pink">Bio</code> for example and let’s see how importing different submodules works. Below, the for loop is ‘iterating’ or looping through records being read from a fasta file ‘example.fasta’. The <code class="code-pink">record</code> object in this case, is a <code class="code-pink">SeqRecord</code> object. But wait, we didn’t load the <code class="code-pink">SeqRecord</code> submodule at all! How is the parsers making those records if we haven’t loaded it?
     </p>
-    <img src="/assets/images/blog/sorting-python/bio-python.png" alt="" srcset="">
+    <img src="/assets/images/blog/sorting-python/bio-python.png" alt="" srcset="" />
     <p>
         It turns out that the submodule <code class="code-pink">SeqIO</code> has already loaded the <code class="code-pink">SeqRecord</code> submodule for us, which in turn has loaded the <code class="code-pink">Seq</code> submodule. How confusing! Behind the scenes, there is a lot of importing going on, and we got a lot of mileage out of the much simpler submodule! We have access to the <code class="code-pink">Seq</code> objects, including reverse complementation methods, for free!
     </p>
@@ -165,7 +67,7 @@
     <p>
         Okay, so now we know that importing submodules can be just as effective as loading the whole module. Now what? Well, did you notice how we didn’t need to ‘call’ <code class="code-pink">SeqIO()</code> or assign its return to an instance or variable name like below?
     </p>
-    <img src="/assets/images/blog/sorting-python/module.fn.png" alt="">
+    <img src="/assets/images/blog/sorting-python/module.fn.png" alt="" />
     <p>
         That means we are working instead with a module, because we could use the function <code class="code-pink">parse</code> under the <code class="code-pink">SeqIO</code> ‘namespace’ (a place to store names of constants/variables, functions, and classes) without building an object first. While we’re on the subject of modules vs classes/objects, the last line above would have been an example of a ‘method’ call. A method is a fancy name for a function that is tied to an instance or object created from a class.
     </p>
@@ -207,7 +109,7 @@
     <p>
         The directory structure looks roughly like this:
     </p>
-    <img src="/assets/images/blog/sorting-python/dir_structure.png" alt="" srcset="">
+    <img src="/assets/images/blog/sorting-python/dir_structure.png" alt="" srcset="" />
     <h2>Review</h2>
     <p>
         Okay! We covered more material in this post than you might realize. We learned some dos and don’ts of dictionaries. We learned some basic principles of modules and the import system. Then we learned that module/submodule, superclass/class, and module/function relationships can be defined with hierarchical tree structures. And finally, we learned how to build a module from either a simple file or from a directory with an <code class="code-pink">__init__.py</code> file in it.
@@ -216,81 +118,4 @@
         I’m glad you read this article! If you enjoyed the content, be sure to check out the beginner tag and upvote the article on social media! Thanks for your support.
     </p>
 </div>
-    
-    <a href="https://www.patreon.com/TheWaterAndWind">
-        <button style="margin-top: 40px; margin-bottom: 40px;"><i class="fab fa-patreon fa-2x"></i>&nbsp;&nbsp;Become a Patreon</button>
-    </a>
-    <div style="margin-top: 20px;">
-        
-            <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    
-    var disqus_config = function () {
-    this.page.url = 'http://USERNAME.github.io';  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = 'http://USERNAME.github.io'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://matthewralston.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        
-    </div>
-</div>
-
-
-
-
-    <!-- FOOTER -->
-<footer>
-    <div class="container">
-
-        <div class="links">
-            <div class="footer-logo">
-                <a href="/index.html"><h3>Matt Ralston</h3></a>
-            </div>
-            <div class="footer-quick-links">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/portfolio">Portfolio</a></li>
-                    <li><a href="/cv">C.V</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Other Links</h3>
-                <ul class="footer-links">
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="https://matthewralston.github.io/kmerdb/" target="_blank">KDB</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p class="footer-links">©2021 Matthew Ralston. All rights reserved</p>
-            <div class="footer-icons">
-                <a href="mailto:mrals89@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
-                <a href="https://linkedin.com/in/matthewralston" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="https://www.patreon.com/TheWaterAndWind" target="_blank"><i class="fab fa-patreon fa-2x"></i></a>
-                <a href="http://github.com/MatthewRalston" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                <a href="http://facebook.com/matthewthomasralston" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="https://open.spotify.com/user/waterandwindmusic" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
-            </div>
-        </div>
-
-    </div>
-</footer>
-
-    <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/assets/js/css3-animate-it.js"></script>
-<script type="text/javascript" src="/assets/js/main.js"></script> 
-  </body>
-</html>
+:ET

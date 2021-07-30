@@ -970,9 +970,9 @@ header {
 }
 
 #post img {
-  max-width: 80%;
-  max-height: 600px;
-  /* max-height: auto; */
+  max-width: 100%;
+  /* max-height: 600px; */
+  max-height: auto;
 }
 
 #post img.img-100-width {
