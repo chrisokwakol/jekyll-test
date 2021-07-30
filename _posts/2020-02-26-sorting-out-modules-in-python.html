@@ -21,7 +21,7 @@ tags: python beginner noob
     <p>
         Imagine a magical backpack that can store as much information as you can fit in memory. The one rule of using the magic backpack, is that <b>each time you need a new pocket or location to store something in it, you have to give the backpack a name</b> to reference the new information with.
     </p>
-    <img src="/assets/images/blog/sorting-python/dictionaries_python.png" alt="" srcset="">
+    <img src="{{ site.baseurl }}/assets/images/blog/sorting-python/dictionaries_python.png" alt="" srcset="">
     <h2>Issues with Nesting</h2>
     <p>
         Forgetting the name, or a <code class="code-pink">KeyError</code>, is a common error for beginners to struggle with. To minimize the number of KeyErrors, it is common to store the key in a variable or list for convenient access (imagine reading a table’s column headers with <code class="code-pink">.readline()</code>).
@@ -29,7 +29,7 @@ tags: python beginner noob
     <p>
         Another cause of the <code class="code-pink">KeyError</code> is a complex nested structure of lists and dictionaries with a complex accessing strategy. To DRY up your code a little, a lambda expression might be the right tool to access your buried data!
     </p>
-    <img src="/assets/images/blog/sorting-python/lambda.png" alt="" srcset="">
+    <img src="{{ site.baseurl }}/assets/images/blog/sorting-python/lambda.png" alt="" srcset="">
     <p>
         Remember that even though the <code class="code-pink">KeyError</code> may be simple to resolve, discovering an error is the expensive part, it’s not just about how extreme or how deleterious the error might seem (like with respect to closed threads/processes/connections).
     </p>
@@ -68,7 +68,7 @@ tags: python beginner noob
     <p>
         Okay, so let’s take the BioPython module <code class="code-pink">Bio</code> for example and let’s see how importing different submodules works. Below, the for loop is ‘iterating’ or looping through records being read from a fasta file ‘example.fasta’. The <code class="code-pink">record</code> object in this case, is a <code class="code-pink">SeqRecord</code> object. But wait, we didn’t load the <code class="code-pink">SeqRecord</code> submodule at all! How is the parsers making those records if we haven’t loaded it?
     </p>
-    <img src="/assets/images/blog/sorting-python/bio-python.png" alt="" srcset="">
+    <img src="{{ site.baseurl }}/assets/images/blog/sorting-python/bio-python.png" alt="" srcset="">
     <p>
         It turns out that the submodule <code class="code-pink">SeqIO</code> has already loaded the <code class="code-pink">SeqRecord</code> submodule for us, which in turn has loaded the <code class="code-pink">Seq</code> submodule. How confusing! Behind the scenes, there is a lot of importing going on, and we got a lot of mileage out of the much simpler submodule! We have access to the <code class="code-pink">Seq</code> objects, including reverse complementation methods, for free!
     </p>
@@ -76,7 +76,7 @@ tags: python beginner noob
     <p>
         Okay, so now we know that importing submodules can be just as effective as loading the whole module. Now what? Well, did you notice how we didn’t need to ‘call’ <code class="code-pink">SeqIO()</code> or assign its return to an instance or variable name like below?
     </p>
-    <img src="/assets/images/blog/sorting-python/module.fn.png" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/sorting-python/module.fn.png" alt="">
     <p>
         That means we are working instead with a module, because we could use the function <code class="code-pink">parse</code> under the <code class="code-pink">SeqIO</code> ‘namespace’ (a place to store names of constants/variables, functions, and classes) without building an object first. While we’re on the subject of modules vs classes/objects, the last line above would have been an example of a ‘method’ call. A method is a fancy name for a function that is tied to an instance or object created from a class.
     </p>
@@ -118,7 +118,7 @@ tags: python beginner noob
     <p>
         The directory structure looks roughly like this:
     </p>
-    <img src="/assets/images/blog/sorting-python/dir_structure.png" alt="" srcset="">
+    <img src="{{ site.baseurl }}/assets/images/blog/sorting-python/dir_structure.png" alt="" srcset="">
     <h2>Review</h2>
     <p>
         Okay! We covered more material in this post than you might realize. We learned some dos and don’ts of dictionaries. We learned some basic principles of modules and the import system. Then we learned that module/submodule, superclass/class, and module/function relationships can be defined with hierarchical tree structures. And finally, we learned how to build a module from either a simple file or from a directory with an <code class="code-pink">__init__.py</code> file in it.

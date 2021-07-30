@@ -31,7 +31,7 @@ tags: prose beginner education python
     </p>
     <h4>Repository structure</h4>
     <h5>Directories</h5>
-    <img src="/assets/images/blog/python_calculator/dir_structure.png" alt="" srcset="">
+    <img src="{{ site.baseurl }}/assets/images/blog/python_calculator/dir_structure.png" alt="" srcset="">
     <p>
         Your directory structure and files in the root of your repository are the first things users see. You’ll want your code, documentation, and tests in predictable locations so anyone can clearly understand what directories are meant for developers, and which contain code they might need to read when identifying bugs or asking questions on an issue tracker. A little bit of directory nesting can help you orgranize and group your content, but too much may confuse users or developers who might actually care about navigating your repository. Let’s start with an overview of this pretty simple directory structure before we consider specific files or entry points that you’ll need to explicitly emphasize in the <code class="code-pink">README</code>.
     </p>
@@ -70,7 +70,7 @@ tags: prose beginner education python
     <p>
         Okay! Now that the directories have been summarized, let’s talk about some specific files that you’ll want to include with your repository.
     </p>
-    <img src="/assets/images/blog/python_calculator/repo_files.png" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/python_calculator/repo_files.png" alt="">
     <h4>Your primary entry point: the command-line interface (CLI)</h4>
     <p>
         A portable script located in the <code class="code-pink">bin/</code> directory is the ideal entry point for your program. It should have <a href="https://docs.python.org/3/library/argparse.html">argparse</a> or similar argument parsing with a thorough description of formats, parameter types, and effects those parameters will have on the corresponding output.
@@ -102,7 +102,7 @@ tags: prose beginner education python
     <p>
         An essential file for a Python package, this contains instructions for <code class="code-pink">pip</code> to understand how to install your package: dependencies, license information, supported Python versions, etc. Note below that <code class="code-pink">requirements.txt</code> and the optional <code class="code-pink">requirements-dev.txt</code> are essentially snapshots of your development virtual environment; you only need to update those in order to update the <code class="code-pink">setup.py</code> file. Second component of note is <code class="code-pink">scripts=['bin/myscript']</code>, which specifies the executable that should be available in the users <code class="code-pink">PATH</code> after installation.
     </p>
-    <img src="/assets/images/blog/python_calculator/setup.py.png" style="max-width: 100%;
+    <img src="{{ site.baseurl }}/assets/images/blog/python_calculator/setup.py.png" style="max-width: 100%;
     max-height: 1000px;" alt="">
     <p>
         <code class="code-pink">.travis.yml</code>
@@ -139,7 +139,7 @@ tags: prose beginner education python
     <p>
         Basically, here are the different types of errors: <code class="code-pink">FATAL</code> errors are errors where the program cannot continue. <code class="code-pink">ERROR</code>s and <code class="code-pink">WARNING</code>s should almost always be relayed to the user, and as a script-kiddie I consider most errors fatal. In contrast, <code class="code-pink">INFO</code> messages are high-level and let the user know if the process is parsing, iterating over input, or simply still calculating. Finally, developers use <code class="code-pink">DEBUG</code> messages for extremely verbose information about each calculation, so that a near continuous stream of information is printed to STDERR. They can also include the details of specific iterations in case of a fatal error. I like to use the following in my CLI to let users toggle between info and debug level verbosity (<code class="code-pink">WARNING</code> by default) by specifying one or two <code class="code-pink">-v</code>, <code class="code-pink">--verbose</code> flags (<code class="code-pink">INFO</code> and <code class="code-pink">DEBUG</code>, respectively) and the logger in <code class="code-pink">mymodule/submodule.py</code> inherits settings from the root logger environment.
     </p>
-    <img src="/assets/images/blog/python_calculator/debugging.png" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/python_calculator/debugging.png" alt="">
     <h4>How to build an algorithm in a Python module</h4>
     <p>
         Your module can be referred to as the API or SDK, although those usually have a different context of web applications or novel platforms (IOS, android), but I digress. Just know that if I use the phrase API, I’m referring to your module that contains the functions, classes, and logic of your calculation. In contrast, the CLI I discussed above might seem pretty boring, and it should be. It’s just a wrapper to make your module accessible and easy-to-use from the command line.
@@ -173,14 +173,14 @@ tags: prose beginner education python
     <p>
         If there is an avaialble format validator/parser, I’d suggest using it <em>if</em> it returns something that behaves like a filehandle/io object or uses a generator pattern. If the module you’re trying to use suggests using something like the loop below, it’s clear to most beginners that the result of the <code class="code-pink">ParseFile</code> method below is ‘iterable’; it likely it parses and validates each record on the fly. Great! While it isn’t a list, it ‘yields’ results one at a time until it’s completely parsed the file. This is called a ‘generator’ pattern, since it doesn’t load all records into memory as a list. Instead it just keeps a pointer at the current line/record in the file, parses it, and ‘yields’ it to the outside scope that is invoking the iteration.
     </p>
-    <img src="/assets/images/blog/python_calculator/input_dataset_one_line_at_a_time.png" alt="" srcset="">
+    <img src="{{ site.baseurl }}/assets/images/blog/python_calculator/input_dataset_one_line_at_a_time.png" alt="" srcset="">
     <p>
         If there isn’t a parser available, you’ll want to implement your own record validation function that takes a line (or several lines) as input, validates the record, and returns it. This is very easy if you’re just checking column types for a tsv, since you can just use the file <code class="code-pink">open()</code> generator and pass each line to a simple function that splits strings, converts integers for certain columns, etc. But if it requires loading several lines at a time, you’ll need to build your own ‘generator’ to define how many lines to read, whether or not those lines consitute a valid record, the data structure for the individual records, etc.
     </p>
     <p>
         After you’ve figured out how to validate the input dataset’s format, you’ll need to pass each record to your function that performs the calculation on a single record. It might look like the following. You’ll notice that there is a parser module that contains one or more parsing functions, and a calculator module with one or more fancy metrics that you can calculate from a single record.
     </p>
-    <img src="/assets/images/blog/python_calculator/calculate.png" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/python_calculator/calculate.png" alt="">
     <h4>Gotta go fast! How can I make it as fast as possibble?</h4>
     <p>
         At this point you have a better idea of the key considerations of parsing+validation and the calculation itself; earlier I contrasted non-linear inter-record or inter-group comparisons vs one metric for each input record. The actual ‘atomic’ (i.e. indivisible) calculation on a record, pairs of records, or groups of records may also be linear or non-linear in addition. Fortunately, some of the things you may be doing may be quite simple conditionals, additions, multiplications, or grabbing the ith column and using that in an equation. There are efficient ways and inefficient ways to do even these very basic operations in Python. Though I haven’t covered some more specifc tricks yet, I have a nice introduction to <a href="http://matthewralston.github.io/blog/beginner-python-arrays">benchmarking Python list methods</a>.

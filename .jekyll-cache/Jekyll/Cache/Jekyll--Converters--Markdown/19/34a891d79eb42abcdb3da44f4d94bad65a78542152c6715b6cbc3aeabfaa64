@@ -1,14 +1,4 @@
----
-layout: post
-author: Matt Ralston
-header-image: "/assets/images/blog/workstation/feature.jpg"
-hero-title: Gradschool workstation.
-hero-subtitle: Basic overview of hardware and Arch-based OS
-category: Coding
-tags: meta prose beginner sysadmin 
----
- 
-<div id="post">
+I"�]<div id="post">
     <p>
         In this blog post we’ll be reviewing the essentials of a mature workstation build, in this case, for graduate school. We begin with a look at what defines a workstation in a way that differentiates it from a consumer PC, which is typically a 4-8 core machine, with limited RAM and often an older generation GPU. Then we describe the main workstation build I have been working on. Next, I briefly review the choice of operating system and essential productivity tools. Finally, I describe a data science workflow that is typical for my bioinformatics interests.
     </p>
@@ -55,7 +45,7 @@ tags: meta prose beginner sysadmin
         A crucial issue actually is cooling. The reason calculations perform so slowly on a Mac is that they become CPU throttled because of the heat constraints on the thermal design on everything except maybe the Mac Pro (again, timeliness). A disadvantage of liquid cooling is that its not designed for long-running calculations (several hours, multiple days etc). This produces wear on the pump that reduces the integrity over time, and eventually the AIO will need to be replaced. In several instances, AMD’s Threadripper platform performed better under a Noctua 140mm unit than compared to the top performing AIOs with sTRX4 mounting brackets according to a GamersNexus investigations. I’d stick to the Wraithripper or the Noctua units (I keep a 120mm unit as a backup) on air cooling, and I’d stay away from the Enermax LiqTech series, which, also according to GamersNexus and Level1Tech Youtube channels, report problems with many consumer’s AIOs.
     </p>
     <p>
-        For Intel and AMD platforms, I can’t give any specific recommendations other than 280 > 360 > 240 > 140 > 120mm radiator rule of thumb. I’d say that whatever your choice of cooler may be, please buy aftermarket and buy a premium airflow case to keep your components cool. This will help with system stability and performance when performing overclocking.
+        For Intel and AMD platforms, I can’t give any specific recommendations other than 280 &gt; 360 &gt; 240 &gt; 140 &gt; 120mm radiator rule of thumb. I’d say that whatever your choice of cooler may be, please buy aftermarket and buy a premium airflow case to keep your components cool. This will help with system stability and performance when performing overclocking.
     </p>
     <h2>Where do I go for more information?</h2>
     <p>
@@ -150,7 +140,7 @@ tags: meta prose beginner sysadmin
       <p>
         Okay, now for the main attraction. I started by reviewing the latest news on the Threadripper series, as I saw it was best suited for my needs. The 3990X certainly is attractive, but slightly outside of my price point for my CPU. I decided to keep the budget down, since I figured I’d be doing most of my compute on a server at school anyways. With a little bit of luck, my proposal for access to the University of Delaware’s high-compute server will be accepted when I present a prototype for my thesis.
       </p>
-      <img src="{{ site.baseurl }}/assets/images/blog/workstation/feature.jpg" id="workstation-img" alt="" srcset="">
+      <img src="//assets/images/blog/workstation/feature.jpg" id="workstation-img" alt="" srcset="" />
       <h2>CPU</h2>
       <p>
         So the core of the system is the 3960X Threadripper CPU with 128MB of L3 cache, 24 cores and 48 threads, base clock of 3.8GHz. This is a sufficient number of threads for some simple workflows with relatively low sample numbers, where the data processing can be done in parallel. Of course specific matrix manipulations can be done on either the CPU or GPU, depending on the implementation. This is why saving money for Quadro or A5000/A6000 graphics is worth it and I’ll discuss this next. I expect that serious multiprocessing might be done on a server for multi-night workloads, with small test batches being run on the local machine. The 3960X is technically the best value for the Threadripper series, as an additional $500 only gets you 8 more threads, and then the cost goes up considerably for the 3990X.
@@ -159,7 +149,7 @@ tags: meta prose beginner sysadmin
       <p>
         The system is cooled by a h250i Elite Cappelix 360mm AIO CPU cooler from Corsair. The loop is completely closed, leakproof, and maintenance free. When the system stability starts becoming an issue and temperatures climb and fan/pump whine becomes a larger issue, then I’ll have to replace the CPU cooler with something else. This cooler keeps CPU temperatures around 38-41 degrees Celsius when idling and ramps as high as 68 degrees Celsius when under consistent load. I’d say this is reasonable performance so far, and I’ve had the cooler for about a month.
       </p>
-      <img src="{{ site.baseurl }}/assets/images/blog/workstation/workstation2.jpg" id="workstation-img" alt="" srcset="">
+      <img src="/assets/images/blog/workstation/workstation2.jpg" id="workstation-img" alt="" srcset="" />
       <h2>GPU</h2>
       <p>
         The second most important thing is the GPU. A large number of CUDA cores is necessary to perform calculations on complex matrix systems, decompositions, multiplications, model building, machine learning, and much more. Necessarily so, there can be a considerable advantage to having access to cards with large amounts of VRAM. In my case, I went with the A6000, and balanced this by having considerably higher system memory than VRAM, to make sure data can be properly handled. The A6000 has over 10k CUDA cores, which is more than sufficient for most genomics and data science workloads.
@@ -220,3 +210,4 @@ tags: meta prose beginner sysadmin
         I use GNU parallels for efficient OS-level parallelization and sometimes make use of Python’s <code class="code-pink">multiprocessing</code> library.
        </p>
 </div>
+:ET

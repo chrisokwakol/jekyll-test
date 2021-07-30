@@ -9,26 +9,26 @@ hero-title: Basic Skills in Computational Research Environments
     <blockquote>
         About a 25 minute read
     </blockquote>
-    <img src="/assets/images/blog/basic_skills_in_computational_research_environments/realpython_puzzle_pieces.jpg" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/basic_skills_in_computational_research_environments/realpython_puzzle_pieces.jpg" alt="">
     <p>
         Big data is a meme, but different flavors of bioinformaticians can be referred to as analysts, data scientists, and data engineers. This article just brushes the surface of the differences and focuses the conversation on the reliance of individual team members on each other for hypotheses, databases, models, calculations, websites, reports, and more. When I was in school, it was almost a joke that bioinformaticians who provide alignment, differential expression analyses, and modeling of transcriptomic data often get excluded from papers in favor of scientists doing the laboratory work. I don't think the field is mature enough to understand the complexity of computation involved or how fortunate it is that such work is even possible at this stage. By the end of the article, you should have a better understanding of the types of skills that can be useful, the strengths and weaknesses of certain flavors of bioinformaticians (data scientist vs data engineer), and how developing those skills at the expense of others will pidgeonhole you in to a role where it is your responsibility to communicate value and preferences to your team.
     </p>
     <h4>
         Bioinformaticians have some balance of software, comp sci, maths/stats, and scientific expertise
     </h4>
-    <img src="/assets/images/blog/basic_skills_in_computational_research_environments/data_science_vs_data_engineer.png" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/basic_skills_in_computational_research_environments/data_science_vs_data_engineer.png" alt="">
     <p>
         Every scientist has a flavor and a role. Bench rats, desk jockeys, infrastructure builders, and more. And each scientist computational or otherwise makes a choice about laboratory techniques, statistical skills, computational abilities, infrastructure, and reliance on homegrown or third-party tools. In addition, the complexity of the biological systems under investigation requires advanced modeling and simulation techniques in contrast to simpler hypothesis testing. I would gather that most bioinformaticians fall somewhere within the following 3 categories, with strengths and obligations accordingly. As you learn skills or specialize in these directions, try to understand the parts of your team that are in the minority.
     </p>
     <h4>
         Scientists and Analysts
     </h4>
-    <img src="/assets/images/blog/basic_skills_in_computational_research_environments/scientist_gorilla.png" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/basic_skills_in_computational_research_environments/scientist_gorilla.png" alt="">
     <p>
         In my experience, most scientists can do basic regression and hypothesis testing in Excel. Armed with educational or professional backgrounds in specialized biological or chemical knowledge, they have good understanding of experimental design, laboratory techniques, and scientific communication. However, their weakness in the computational side of their field means they have little understanding of theoretical metrics, advanced modeling techniques, or the costs associated with software design and calculations. One of the benefits of calculations, models, and simulation is the reduced cost of laboratory experimentation through prediction or simulation of results and scenarios that would require considerable experimentation to do otherwise. They are heavily reliant on graphical interfaces, websites, and databases. And they rely heavily on the following groups to build tools, critique third-party infrastructure, clean datasets, or provide models that can be used.
     </p>
     <h4>Data Scientists</h4>
-    <img src="/assets/images/blog/basic_skills_in_computational_research_environments/data_scientist_simple.jpg" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/basic_skills_in_computational_research_environments/data_scientist_simple.jpg" alt="">
     <p>
         There are often more insights to gain from existing datasets and not enough time or personnel to model or suggest future sampling required for improved sensitivity and specificity of inferences. This has led to the rise of the data scientist specialization and new curricula designed to provide quantitative and computational skillsets to the next generation of analysts. With a strong background in matrix algebra and calculus, statistics, machine learning, and basic or intermediate software skillsets, data scientists are prepared to interpret larger datasets, perform calculations, and develop professional reports from combinations of new and old data.
     </p>
@@ -39,7 +39,7 @@ hero-title: Basic Skills in Computational Research Environments
         They tend to have proficiency in R, Perl, Python, SQL, and shell languages. They are results oriented and make the most of existing infrastructure, not feeling shy to ask or query for datasets. However, their weakness in other pragmatic aspects of programming such as web development, algorithm performance, or systems design is not emphasized by most data science curricula. Decisions are often made from their analyses and they have considerable decision making power. But again their job descriptions often focus on analyses and results instead of evaluating existing tools or building new infrastructure to enable others. They rely heavily on existing databases and tools but junior data scientists rarely participate in database or application designs, build novel metrics, or improve the efficiency of existing tools.
     </p>
     <h4>Data Engineer</h4>
-    <img src="/assets/images/blog/basic_skills_in_computational_research_environments/data_engineering_simple.jpg" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/basic_skills_in_computational_research_environments/data_engineering_simple.jpg" alt="">
     <p>
         The final category is also newer in its formalization, especially with the rise of larger datasets, databases, or complex mixed numerical and non-numerical data or abstract representations. Data engineers have rich software engineering and computer science abilities that lets them build critical infrastructure for others with a focus on stability, usability, and efficiency. Precomputing metrics, annotation of datasets, and automation may be required for databases and applications in their wheelhouse. Enterprise software is often expensive to license and data engineers make a team responsive to the teams' computational needs in a way that scientists and data scientists often cannot. However, I would say that these teammates, the data engineers, were an obvious minority in the teams I've worked in. Their weakness is certainly a basic or non-specific background in the applied area and most companies do not support the growth of data engineers towards the scientific area. That said, they are invaluable teammates and can provide scripts, REST-APIs, databases, automated systems, web applications, and even some high-performance computing needs.
     </p>
@@ -125,7 +125,7 @@ hero-title: Basic Skills in Computational Research Environments
     <p>
         And then there is the REST-API. REST-APIs are mainstays of modern software system architectures and web applications and ultimately provide the developer with a larger audience. They can contain the logic of a web application that can be used by scientists who might not be comfortable at the command-line, by data scientists who want broad access to available data, or for command-line interfaces that send/receive messages or data to the database. LDAP and authentication can come in to play for enterprise systems. 500 response codes are unacceptable: either the request was invalid or the server didn't find/respond in a way that produced a result... but something should always be returned, even an empty data structure. There are plenty of HTTP response codes that can tell the web page, CLI, or other component of the system why the request didn't produce fruit. Many people like to use a reponse JSON object that looks roughly like the structure below. I'm still a beginner/intermediate software developer and some software systems can be rather complex, but an understanding of REST-APIs is a good foundation for bioinformaticians seeking to access databases without server-side access, to expose their calculators to a broader audience, or to develop software systems that have considerable value for their organization or audience.
     </p>
-    <img src="/assets/images/blog/basic_skills_in_computational_research_environments/rest_api_result_example.png" alt="">
+    <img src="{{ site.baseurl }}/assets/images/blog/basic_skills_in_computational_research_environments/rest_api_result_example.png" alt="">
     <p>
         Interface is a consequence of any calculation that you find useful and you'll find some you like, some you don't, and a whole bunch in between. Rather than describe any javascript or MVC framework you should go learn, I just decided to keep it non-commital and say that the choice of interface is important when you're deciding the scope of a project and timelines. Your interests in UI will adapt to the needs of your audience (e.g. a few dozen scientists) and the skills of your collaborators (e.g. half a dozen computational scientists).
     </p>
