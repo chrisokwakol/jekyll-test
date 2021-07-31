@@ -1,4 +1,15 @@
 <!-- HEADER -->
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="shortcut icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ "/assets/css/animations.css" | relative_url }}" type="text/css">
+    <script async src="https://kit.fontawesome.com/0f132dab57.js" crossorigin="anonymous"></script>
+  </head>
 <header>  
     <!-- <img id="header-bg" src="{{ page.header-image }}" alt="" srcset=""> -->
     <img id="header-bg" src="{{ site.baseurl }}/{{ page.header-image }}" alt="" srcset="">

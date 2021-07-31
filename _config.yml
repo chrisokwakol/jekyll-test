@@ -12,7 +12,7 @@ permalink: pretty
 
 plugins: 
   - jekyll-paginate
-  - jekyll-archives
+  # - jekyll-archives
 
 jekyll-archives:
   enabled:
@@ -33,13 +33,7 @@ disqus:
   # shortname: my_disqus_shortname
   shortname: matthewralston
  
-# Collections
-collections:
-  tags:
-    output: true
-    permalink: /tag/:path/
-  authors:
-    output: true
+
 
 # Page title
 homepage: Home
