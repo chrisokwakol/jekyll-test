@@ -80,9 +80,9 @@ nav {
   position: absolute;
   top: 66px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  margin-left: 1.4%;
+  /* margin-left: 1.4%; */
 }
 
 .nav-menu ul li {

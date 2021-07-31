@@ -8,7 +8,7 @@ layout: default
         {% for post in site.posts %}
         {% if post.tags contains page.tags %}
         <li id="posts-with-tag-info">
-            <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+            <h4><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h4>
             <div id="posts-with-tag-info-meta">
                 <p>{{ post.author }}</p> &nbsp; &nbsp;
                 <span style="font-weight: 300;">{{ post.date | date_to_string }}</span>
@@ -20,12 +20,4 @@ layout: default
         {% endfor %}
     </ul>
     {% include archives.html %}
-    <!-- <div>
-        <h1 id="posts-with-tag-title">All Tags</h1>
-        {% for tag in site.tags %}
-            <span id="tag-cloud-item">
-                <a href="">{{ tag[0] }}</a>
-            </span>
-        {% endfor %}
-    </div> -->
 </div> 
