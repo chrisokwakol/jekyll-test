@@ -19,14 +19,13 @@ layout: default
         {% endif %}
         {% endfor %}
     </ul>
-    <div>
+    {% include archives.html %}
+    <!-- <div>
         <h1 id="posts-with-tag-title">All Tags</h1>
         {% for tag in site.tags %}
             <span id="tag-cloud-item">
-                <a href="">
-                    {{ tag[0] }}
-                </a>
+                <a href="">{{ tag[0] }}</a>
             </span>
         {% endfor %}
-    </div>
-</div>
+    </div> -->
+</div> 

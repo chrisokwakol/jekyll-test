@@ -222,12 +222,22 @@ header-image: "/assets/images/header3.jpg"
     <div class="blog-posts">
         {% for post in site.posts limit:3 %}
         <div class="blog-post one">
-                <a href="{{ post.url }}">
+                <a href="{{ site.baseurl }}/{{ post.url }}">
                     <img class="animated bounceInLeft" src="{{ site.baseurl }}/{{ post.header-image }}" alt="" srcset=""><a href="{{ post.url }}"></a>
                 </a>
                 <div id="blog-post-card-content">
                     <h2 class="animated bounceInRight"><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h2>
-                    <small>{{ post.date | date_to_string }}</small>
+                    <!-- Tags -->
+                    {% for tag in post.tags %}
+                    {% assign tag_slug = tag | slugify: "raw" %}
+                    <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}>
+                        #{{ tag }}
+                    </a>
+                    {% endfor %}
+                    <!-- End Tags -->
+                    <div style="margin-top: 10px;">
+                        <small>{{ post.date | date_to_string }}</small>
+                    </div>
                     <hr 
                         style="height: 4px; max-width: 70px; text-align: start; background-color: #2A72ED; margin-top: 10px; margin-bottom: 10px;"
                     >
@@ -235,7 +245,7 @@ header-image: "/assets/images/header3.jpg"
                         {{ post.content | markdownify | strip_html | truncatewords: 20 }}
                     </p>
                 </div>
-        </div>
+        </div> 
         {% endfor %}
     </div>
 </div>
