@@ -11,8 +11,9 @@
 {% assign all_tags = all_tags | sort %}
 {% assign all_tags = all_tags | uniq %}
 
+<h1 id="posts-with-tag-title">All Tags</h1>
 {% for tag in all_tags %}
 <span id="tag-cloud-item">
-        <a href="{{ site.baseurl }}/tags/{{ tag | uri_escape }}">{{ tag }}</a>
-    </span>
-    {% endfor %}
+    <a href="{{ site.baseurl }}/tags/{{ tag | uri_escape }}">{{ tag }}</a>
+</span>
+{% endfor %}
